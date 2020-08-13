@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class studentLoginActivity extends AppCompatActivity {
+public class AdminLoginActivity extends AppCompatActivity {
     ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_login);
+        setContentView(R.layout.activity_admin_login);
 
         backBtn = findViewById(R.id.back);
 

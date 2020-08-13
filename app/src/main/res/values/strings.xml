@@ -9,4 +9,10 @@
     <string name="welcome">Welcome</string>
     <string name="login">Login</string>
     <string name="you_re_an_admin">You\'re an Admin ?</string>
+    <string name="admin_login">Admin login</string>
+    <string name="hello_there">Hello there</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="back">back</string>
 </resources>
