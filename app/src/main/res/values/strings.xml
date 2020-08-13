@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MAD-Project</string>
+    <string name="you_re_not_member">You\'re not member ?</string>
+    <string name="register">Register</string>
+    <string name="codeLearner">CodeLearner</string>
+    <string name="learn_from">Learn from</string>
+    <string name="anywhere">Anywhere</string>
+    <string name="explore">Explore</string>
 </resources>
