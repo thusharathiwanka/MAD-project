@@ -16,4 +16,13 @@
     <string name="username">Username</string>
     <string name="back">back</string>
     <string name="next">Next</string>
+    <string name="about_us">About us</string>
+    <string name="menu">menu</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor</string>
+    <string name="favourites">Favourites</string>
+    <string name="edit_details">Edit Details</string>
+    <string name="profileimg">profileImg</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save_changes">Save Changes</string>
 </resources>
