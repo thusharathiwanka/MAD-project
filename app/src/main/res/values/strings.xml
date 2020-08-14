@@ -25,4 +25,18 @@
     <string name="profile">Profile</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="save_changes">Save Changes</string>
+    <string name="pick">Pick</string>
+    <string name="what_you_like">what you like</string>
+    <string name="java">Java</string>
+    <string name="html">HTML</string>
+    <string name="c">C</string>
+    <string name="css">CSS</string>
+    <string name="cPlusPlus">C++</string>
+    <string name="php">PHP</string>
+    <string name="javascript">JavaScript</string>
+    <string name="python">Python</string>
+    <string name="node_js">Node JS</string>
+    <string name="sql">SQL</string>
+    <string name="finish">Finish</string>
+    <string name="react_js">React JS</string>
 </resources>
