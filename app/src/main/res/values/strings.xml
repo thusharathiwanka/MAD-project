@@ -39,4 +39,8 @@
     <string name="sql">SQL</string>
     <string name="finish">Finish</string>
     <string name="react_js">React JS</string>
+    <string name="all_students">All Students</string>
+    <string name="student1">Student1</string>
+    <string name="delete">Delete</string>
+    <string name="view">View</string>
 </resources>
