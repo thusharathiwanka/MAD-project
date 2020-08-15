@@ -53,4 +53,33 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="Page1Name">Profile</string>
+    <string name="msg1">Welcome</string>
+    <string name="msg2">Udeepa Desarana</string>
+    <string name="btn1">View and Add Lessons</string>
+    <string name="btn2">View Students</string>
+    <string name="btn3">View Feedbacks</string>
+
+    <string name="page2Name">Subjects</string>
+    <string name="btn2_1">JAVA</string>
+    <string name="btn2_2">Phython</string>
+    <string name="btn2_3">PHP</string>
+
+    <string name="page3name">Java</string>
+    <string name="Les1">Lesson 1</string>
+    <string name="Les2">Lesson 2</string>
+    <string name="ma1">Material 1</string>
+    <string name="ma2">Material 2</string>
+    <string name="ma3">Material 3</string>
+    <string name="ma4">Material 1</string>
+    <string name="ma5">Material 2</string>
+    <string name="btn3_1">+</string>
+
+    <string name="addLessons">Add Lessons</string>
+    <string name="title_Name">Lesson Name</string>
+    <string name="btn4_1">Submit</string>
+    <string name="cntnt">Content: </string>
+    <string name="btn4_2">Add Materials</string>
+
 </resources>
