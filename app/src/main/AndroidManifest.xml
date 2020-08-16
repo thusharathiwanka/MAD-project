@@ -10,15 +10,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ReplyQuestionActivity"/>
+        <activity android:name=".AdminViewQuestion" />
+        <activity android:name=".ShowAnswerActivity" />
+        <activity android:name=".DisplayQuestionActivity" />
+        <activity android:name=".AddQuestion">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
         <activity android:name=".Admin_lessons" />
-        <activity android:name=".Admin_profile" >
+        <activity android:name=".Admin_profile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".Admin_nav" >
+        <activity android:name=".Admin_nav">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

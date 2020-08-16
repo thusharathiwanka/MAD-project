@@ -79,4 +79,20 @@
     <string name="cntnt">Content: </string>
     <string name="btn4_2">Add Materials</string>
 
+    <string name="module">Module</string>
+    <string name="question">Email:\n
+        Module:\n
+        Question:</string>
+    <string name="update">Edit</string>
+    <string name="reply">Reply</string>
+    <string name="show_reply">Show_Reply</string>
+    <string name="question_title">Post A Question</string>
+    <string name="post">Post</string>
+    <string name="disQuestion">Display Question</string>
+    <string name="upload">Upload</string>
+    <string name="answer2">Answer</string>
+    <string name="answer3">Enter Answer</string>
+    <string name="ShowAnswer">Display Answers</string>
+    <string name="question2">Question</string>
+
 </resources>
