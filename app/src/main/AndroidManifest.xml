@@ -11,7 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ReplyQuestionActivity"/>
-        <activity android:name=".AdminViewQuestion" />
+        <activity android:name=".AdminViewQuestion" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ShowAnswerActivity" />
         <activity android:name=".DisplayQuestionActivity" />
         <activity android:name=".AddQuestion">

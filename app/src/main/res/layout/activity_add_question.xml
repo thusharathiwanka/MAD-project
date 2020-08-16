@@ -40,8 +40,8 @@
 
     <TextView
         android:id="@+id/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="82dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="84dp"
@@ -49,10 +49,10 @@
         android:fontFamily="@font/heading"
         android:text="@string/question_title"
         android:textColor="@color/black"
-        android:textSize="50sp"
+        android:textSize="45sp"
         app:layout_constraintBottom_toTopOf="@+id/emailInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
@@ -96,7 +96,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="140dp"
         android:background="@drawable/gradientbutton"
         android:fontFamily="@font/medium"
         android:text="@string/post"
@@ -105,18 +105,17 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput"
         app:layout_constraintVertical_bias="0.172" />
 
     <EditText
         android:id="@+id/question"
-        android:layout_width="325dp"
-        android:layout_height="212dp"
+        android:layout_width="323dp"
+        android:layout_height="91dp"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="43dp"
         android:layout_marginRight="43dp"
         android:layout_marginBottom="61dp"
@@ -126,9 +125,9 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/postBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/module"
-        app:layout_constraintVertical_bias="0.466" />
+        app:layout_constraintVertical_bias="0.178" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

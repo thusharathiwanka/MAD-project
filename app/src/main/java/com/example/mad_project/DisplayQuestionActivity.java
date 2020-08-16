@@ -23,7 +23,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
         String question = intent.getStringExtra("QUESTION");
 
         TextView textView = findViewById(R.id.display);
-        textView.setText(""+email+"\n"+module+"\n"+question);
+        textView.setText("Email"+email+"\nModule"+module+"\nQuetion"+question);
 
         button2 = findViewById(R.id.showAnswer);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +35,8 @@ public class DisplayQuestionActivity extends AppCompatActivity {
 
     }
     public void openActivity3(){
+
         Intent intent = new Intent(this, ShowAnswerActivity.class);
+        startActivity(intent);
     }
 }
