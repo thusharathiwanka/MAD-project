@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MAD-Project</string>
+    <string name="app_name">CodeLearner</string>
     <string name="you_re_not_member">You\'re not member ?</string>
     <string name="register">Register</string>
     <string name="codeLearner">CodeLearner</string>
@@ -94,5 +94,4 @@
     <string name="answer3">Enter Answer</string>
     <string name="ShowAnswer">Display Answers</string>
     <string name="question2">Question</string>
-
 </resources>
