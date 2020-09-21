@@ -10,8 +10,12 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReplyQuestionActivity"/>
-        <activity android:name=".AdminViewQuestion" >
+        <activity
+            android:name=".StudentDrawerActivity"
+            android:label="@string/title_activity_student_drawer"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ReplyQuestionActivity" />
+        <activity android:name=".AdminViewQuestion">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +26,10 @@
         <activity android:name=".DisplayQuestionActivity" />
         <activity android:name=".AddQuestion">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".Admin_lessons" />
         <activity android:name=".Admin_profile">
@@ -47,7 +51,13 @@
         <activity android:name=".AdminStudentsActivity" />
         <activity android:name=".SelectFavouritesActivity" />
         <activity android:name=".EditStudentActivity" />
-        <activity android:name=".StudentProfileActivity" />
+        <activity android:name=".StudentProfileActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AboutActivity" />
         <activity android:name=".StudentRegisterActivity" />
         <activity android:name=".AdminLoginActivity" />

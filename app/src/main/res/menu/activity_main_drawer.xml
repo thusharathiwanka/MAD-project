@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/Page1Name" />
+        <item
+            android:id="@+id/nav_learning"
+            android:title="@string/learning" />
+        <item
+            android:id="@+id/nav_ask_question"
+            android:title="@string/ask_question" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="@string/about_service" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:title="@string/feedback" />
+        <item
+            android:id="@+id/nav_log_out"
+            android:title="@string/log_out" />
+    </group>
+</menu>
