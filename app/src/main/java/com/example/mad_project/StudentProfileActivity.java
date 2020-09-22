@@ -57,9 +57,7 @@ public class StudentProfileActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if(id == R.id.nav_profile) {
-                    startActivity(new Intent(getApplicationContext(), StudentProfileActivity.class));
-                } else if(id == R.id.nav_learning) {
+                if(id == R.id.nav_learning) {
 //            startActivity(new Intent(getApplicationContext(), ));
                 } else if (id == R.id.nav_ask_question) {
                     startActivity(new Intent(getApplicationContext(), AddQuestion.class));
