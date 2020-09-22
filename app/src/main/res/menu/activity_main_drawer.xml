@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_profile"
-            android:title="@string/Page1Name" />
+            android:title="@string/Page1Name"/>
         <item
             android:id="@+id/nav_learning"
             android:title="@string/learning" />
