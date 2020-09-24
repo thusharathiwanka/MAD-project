@@ -22,5 +22,8 @@
         <item
             android:id="@+id/nav_log_out"
             android:title="@string/log_out" />
+        <item
+            android:id="@+id/nav_delete_profile"
+            android:title="@string/delete_profile" />
     </group>
 </menu>
