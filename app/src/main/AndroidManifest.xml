@@ -10,10 +10,11 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity_feedback"></activity>
         <activity
             android:name=".StudentDrawerActivity"
             android:label="@string/title_activity_student_drawer"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ReplyQuestionActivity" />
         <activity android:name=".AdminViewQuestion">
             <intent-filter>
@@ -75,6 +76,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

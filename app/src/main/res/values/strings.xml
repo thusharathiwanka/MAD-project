@@ -100,4 +100,8 @@
     <string name="feedback">Feedback</string>
     <string name="log_out">Log Out</string>
     <string name="delete_profile">Delete Profile</string>
+    <string name="titile_feedback">Feedback</string>
+    <string name="feedback_img">feedback</string>
+    <string name="Add_feedback">Add Feedback</string>
+    <string name="backtocourse">Back To Course</string>
 </resources>
