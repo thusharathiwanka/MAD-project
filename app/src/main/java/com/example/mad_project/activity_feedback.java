@@ -18,7 +18,6 @@ public class activity_feedback extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
-
         btn1 = findViewById(R.id.add_feedback);
         btn2 = findViewById(R.id.back);
         mail = findViewById(R.id.gomail);
