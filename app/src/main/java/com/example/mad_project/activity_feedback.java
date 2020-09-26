@@ -27,14 +27,25 @@ public class activity_feedback extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                openNewActivity();
+                openContactMailActivity();
+            }
+        });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                openBackActivity();
             }
         });
 
 
     }
-    public void openNewActivity(){
+    public void openContactMailActivity(){
         Intent intent = new Intent(this, activity_contact_via_gmail.class);
+        startActivity(intent);
+    }
+    public void openBackActivity(){
+        Intent intent = new Intent(this, SelectFavouritesActivity.class);
         startActivity(intent);
     }
 }

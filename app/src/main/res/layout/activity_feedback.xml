@@ -8,12 +8,12 @@
 
     <Button
         android:id="@+id/add_feedback"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="257dp"
+        android:layout_width="266dp"
+        android:layout_height="46dp"
         android:background="@drawable/normal_button"
         android:fontFamily="@font/poppins"
         android:text="@string/Add_feedback"
+        android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,8 +21,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feedback_img"
-        app:layout_constraintVertical_bias="1.0"
-        android:textAllCaps="false"/>
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/feedback_head"
@@ -44,12 +43,12 @@
         android:id="@+id/feedback_img"
         android:layout_width="303dp"
         android:layout_height="289dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="104dp"
         android:contentDescription="@string/feedback_img"
         android:focusable="auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feedback_head"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/feedback" />
 
     <Button
