@@ -16,7 +16,7 @@ import es.dmoral.toasty.Toasty;
 public class SelectFavouritesActivity extends AppCompatActivity {
     ImageView backBtn;
     Button registerBtn;
-    ArrayList<String> btnValues = new ArrayList<String>();
+    ArrayList<String> btnValues = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +98,5 @@ public class SelectFavouritesActivity extends AppCompatActivity {
                 System.out.println("Something went wrong");
         }
         btnValues.add(btnValue);
-        System.out.println(btnValues);
     }
 }
