@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 public class DBHelperProfile extends SQLiteOpenHelper {
-    public static final String DBNAME = "CodeLearner.db";
+    public static final String DBNAME = "CodeLearnerDB.db";
 
     public DBHelperProfile(Context context) {
         super(context, DBNAME, null, 1);
@@ -17,7 +17,7 @@ public class DBHelperProfile extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE students (student_id INTEGER PRIMARY KEY AUTOINCREMENT, student_email TEXT, student_username TEXT, student_password TEXT, student_favourites TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS students (student_id INTEGER PRIMARY KEY AUTOINCREMENT, student_email TEXT, student_username TEXT, student_password TEXT, student_favourites TEXT)");
     }
 
     @Override
@@ -29,26 +29,19 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_email = ?", new String[] {email});
 
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 
     public boolean checkUsername(String username) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_username = ?", new String[] {username});
 
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 
     public boolean insertStudents(String email, String username, String password, ArrayList<String> favourites) {
         StringBuffer stringBuffer = new StringBuffer();
+
         for(String favourite: favourites) {
             stringBuffer.append(favourite);
             stringBuffer.append(", ");
@@ -64,21 +57,13 @@ public class DBHelperProfile extends SQLiteOpenHelper {
 
         long result = sqLiteDatabase.insert("students", null, contentValues);
 
-        if(result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        return result != -1;
     }
 
     public boolean studentLoginCheck(String username, String password) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_username = ? AND student_password = ?", new String[] {username, password});
 
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return cursor.getCount() > 0;
     }
 }

@@ -31,13 +31,6 @@ public class SelectFavouritesActivity extends AppCompatActivity {
         registerBtn = findViewById(R.id.finishBtn);
         final DBHelperProfile registerDB = new DBHelperProfile(this);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,13 +40,20 @@ public class SelectFavouritesActivity extends AppCompatActivity {
                     boolean insertStudents = registerDB.insertStudents(email, username, password, btnValues);
 
                     if (insertStudents) {
-                        Toasty.success(getApplicationContext(), "Your account has been created", Toasty.LENGTH_SHORT).show();
                         Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
                         startActivity(intent);
+                        Toasty.success(getApplicationContext(), "Your account has been created", Toasty.LENGTH_SHORT).show();
                     } else {
                         Toasty.success(getApplicationContext(), "Something went wrong with your registration", Toasty.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

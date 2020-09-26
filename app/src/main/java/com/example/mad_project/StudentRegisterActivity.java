@@ -28,13 +28,6 @@ public class StudentRegisterActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
         final DBHelperProfile registerDB = new DBHelperProfile(this);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,6 +53,13 @@ public class StudentRegisterActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
