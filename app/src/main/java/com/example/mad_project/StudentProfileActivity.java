@@ -75,7 +75,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_feedback) {
 //            startActivity(new Intent(getApplicationContext(),));
                 } else if (id == R.id.nav_log_out) {
-//                    startActivity(new Intent(getApplicationContext(), AddQuestion.class));
+                    startActivity(new Intent(getApplicationContext(), StudentLoginActivity.class));
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);

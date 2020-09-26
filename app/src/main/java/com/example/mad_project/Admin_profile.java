@@ -42,6 +42,14 @@ public class Admin_profile extends AppCompatActivity{
         Button button3 = findViewById(R.id.button3);
         button3.setText(R.string.btn3);
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AdminStudentsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void goLesson(View v) {

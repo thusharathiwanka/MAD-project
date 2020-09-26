@@ -18,11 +18,13 @@ public class DBHelperProfile extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS students (student_id INTEGER PRIMARY KEY AUTOINCREMENT, student_email TEXT, student_username TEXT, student_password TEXT, student_favourites TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS admins (admin_id INTEGER PRIMARY KEY AUTOINCREMENT, admin_name TEXT, admin_email TEXT, admin_username TEXT, admin_password TEXT, admin_subjects TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS students");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS admins");
     }
 
     public boolean checkEmail(String email) {
@@ -72,5 +74,26 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_username = ?", new String[] {username});
 
         return cursor;
+    }
+
+    public boolean insertAdmins(String name, String email, String username, String password, String subjects) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("ADMIN_NAME", name);
+        contentValues.put("ADMIN_EMAIL", email);
+        contentValues.put("ADMIN_USERNAME", username);
+        contentValues.put("ADMIN_PASSWORD", password);
+        contentValues.put("ADMIN_SUBJECTS", subjects);
+
+        long result = sqLiteDatabase.insert("admins", null, contentValues);
+
+        return result != -1;
+    }
+
+    public boolean adminLoginCheck(String username, String password) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM admins WHERE admin_username = ? AND admin_password = ?", new String[] {username, password});
+
+        return cursor.getCount() > 0;
     }
 }
