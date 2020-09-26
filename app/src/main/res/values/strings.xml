@@ -104,4 +104,8 @@
     <string name="feedback_img">feedback</string>
     <string name="Add_feedback">Add Feedback</string>
     <string name="backtocourse">Back To Course</string>
+    <string name="maintxt">Subject</string>
+    <string name="subtxt">Body</string>
+    <string name="send">Send</string>
+    <string name="entersub" />
 </resources>

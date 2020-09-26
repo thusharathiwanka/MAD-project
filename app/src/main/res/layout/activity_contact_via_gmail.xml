@@ -6,4 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".activity_contact_via_gmail">
 
+    <Button
+        android:id="@+id/send"
+        android:layout_width="122dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="112dp"
+        android:fontFamily="@font/semibold"
+        android:text="@string/send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/body" />
+
+    <TextView
+        android:id="@+id/subtxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/regular"
+        android:text="@string/subtxt"
+        android:textColor="#BE000000"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <EditText
+        android:id="@+id/subject"
+        android:layout_width="321dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/maintxt"
+        app:layout_constraintTop_toBottomOf="@+id/maintxt"
+        tools:text="@string/entersub" />
+
+    <TextView
+        android:id="@+id/maintxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:fontFamily="@font/regular"
+        android:text="@string/maintxt"
+        android:textColor="#BE000000"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/body"
+        android:layout_width="319dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/subtxt"
+        app:layout_constraintTop_toBottomOf="@+id/subtxt" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
