@@ -44,23 +44,14 @@ public class SelectFavouritesActivity extends AppCompatActivity {
                 if(btnValues.isEmpty()) {
                     Toasty.error(getApplicationContext(), "Select at least one favourite", Toasty.LENGTH_SHORT).show();
                 } else {
-                    boolean checkEmail = registerDB.checkUsername(email);
-                    boolean checkUsername = registerDB.checkUsername(username);
+                    boolean insertStudents = registerDB.insertStudents(email, username, password, btnValues);
 
-                    if(checkEmail) {
-                        Toasty.error(getApplicationContext(), "This email is already registered", Toasty.LENGTH_SHORT).show();
-                    } else if(checkUsername) {
-                        Toasty.error(getApplicationContext(), "This username is already taken", Toasty.LENGTH_SHORT).show();
+                    if (insertStudents) {
+                        Toasty.success(getApplicationContext(), "Your account has been created", Toasty.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
+                        startActivity(intent);
                     } else {
-                        boolean insertStudents = registerDB.insertStudents(email, username, password, btnValues);
-
-                        if (insertStudents) {
-                            Toasty.success(getApplicationContext(), "Your account has been created", Toasty.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
-                            startActivity(intent);
-                        } else {
-                            Toasty.success(getApplicationContext(), "Something went wrong with your registration", Toasty.LENGTH_SHORT).show();
-                        }
+                        Toasty.success(getApplicationContext(), "Something went wrong with your registration", Toasty.LENGTH_SHORT).show();
                     }
                 }
             }

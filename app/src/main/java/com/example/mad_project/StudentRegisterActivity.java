@@ -26,6 +26,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.emailInput);
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
+        final DBHelperProfile registerDB = new DBHelperProfile(this);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,11 +45,20 @@ public class StudentRegisterActivity extends AppCompatActivity {
                 if(email.length() <= 0 || username.length() <= 0 || password.length() <= 0) {
                     Toasty.error(getApplicationContext(), "Please fill all the fields", Toasty.LENGTH_SHORT).show();
                 }else {
-                    Intent intent = new Intent(getApplicationContext(), SelectFavouritesActivity.class);
-                    intent.putExtra("STUDENT_EMAIL", email);
-                    intent.putExtra("STUDENT_USERNAME", username);
-                    intent.putExtra("STUDENT_PASSWORD", password);
-                    startActivity(intent);
+                    boolean checkEmail = registerDB.checkEmail(email);
+                    boolean checkUsername = registerDB.checkUsername(username);
+
+                    if(checkEmail) {
+                        Toasty.error(getApplicationContext(), "This email is already registered", Toasty.LENGTH_SHORT).show();
+                    } else if(checkUsername) {
+                        Toasty.error(getApplicationContext(), "This username is already taken", Toasty.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), SelectFavouritesActivity.class);
+                        intent.putExtra("STUDENT_EMAIL", email);
+                        intent.putExtra("STUDENT_USERNAME", username);
+                        intent.putExtra("STUDENT_PASSWORD", password);
+                        startActivity(intent);
+                    }
                 }
             }
         });
