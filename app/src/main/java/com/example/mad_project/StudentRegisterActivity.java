@@ -45,9 +45,9 @@ public class StudentRegisterActivity extends AppCompatActivity {
                     Toasty.error(getApplicationContext(), "Please fill all the fields", Toasty.LENGTH_SHORT).show();
                 }else {
                     Intent intent = new Intent(getApplicationContext(), SelectFavouritesActivity.class);
-                    intent.putExtra("USER_EMAIL", email);
-                    intent.putExtra("USER_NAME", username);
-                    intent.putExtra("USER_PASSWORD", password);
+                    intent.putExtra("STUDENT_EMAIL", email);
+                    intent.putExtra("STUDENT_USERNAME", username);
+                    intent.putExtra("STUDENT_PASSWORD", password);
                     startActivity(intent);
                 }
             }

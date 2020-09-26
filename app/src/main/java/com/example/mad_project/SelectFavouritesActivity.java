@@ -18,6 +18,10 @@ public class SelectFavouritesActivity extends AppCompatActivity {
     Button registerBtn;
     ArrayList<String> btnValues = new ArrayList<>();
 
+    String email;
+    String username;
+    String password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,7 @@ public class SelectFavouritesActivity extends AppCompatActivity {
 
         backBtn = findViewById(R.id.back);
         registerBtn = findViewById(R.id.finishBtn);
+        final DBHelperProfile registerDB = new DBHelperProfile(this);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +43,25 @@ public class SelectFavouritesActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(btnValues.isEmpty()) {
                     Toasty.error(getApplicationContext(), "Select at least one favourite", Toasty.LENGTH_SHORT).show();
+                } else {
+                    boolean checkEmail = registerDB.checkUsername(email);
+                    boolean checkUsername = registerDB.checkUsername(username);
+
+                    if(checkEmail) {
+                        Toasty.error(getApplicationContext(), "This email is already registered", Toasty.LENGTH_SHORT).show();
+                    } else if(checkUsername) {
+                        Toasty.error(getApplicationContext(), "This username is already taken", Toasty.LENGTH_SHORT).show();
+                    } else {
+                        boolean insertStudents = registerDB.insertStudents(email, username, password, btnValues);
+
+                        if (insertStudents) {
+                            Toasty.success(getApplicationContext(), "Your account has been created", Toasty.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toasty.success(getApplicationContext(), "Something went wrong with your registration", Toasty.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             }
         });
@@ -47,9 +71,9 @@ public class SelectFavouritesActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Intent intent = getIntent();
-        String email = intent.getStringExtra("USER_EMAIL");
-        String username = intent.getStringExtra("USER_NAME");
-        String password  = intent.getStringExtra("USER_PASSWORD");
+        email = intent.getStringExtra("STUDENT_EMAIL");
+        username = intent.getStringExtra("STUDENT_USERNAME");
+        password  = intent.getStringExtra("STUDENT_PASSWORD");
     }
 
     public void favouriteClicks(View view) {
