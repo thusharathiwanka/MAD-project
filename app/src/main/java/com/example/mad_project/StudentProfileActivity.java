@@ -6,20 +6,25 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import es.dmoral.toasty.Toasty;
 
 public class StudentProfileActivity extends AppCompatActivity {
     Button editProfileBtn;
     ImageView menuBtn;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    TextView usernameView, emailView, favouritesView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +35,10 @@ public class StudentProfileActivity extends AppCompatActivity {
         menuBtn = findViewById(R.id.menuBtn);
         navigationView = findViewById(R.id.nav_view_student);
         drawerLayout = findViewById(R.id.drawer_layout);
+        usernameView = findViewById(R.id.username);
+        emailView = findViewById(R.id.email);
+        favouritesView = findViewById(R.id.favorites);
+        final DBHelperProfile retreiveDB = new DBHelperProfile(this);
 
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,5 +82,25 @@ public class StudentProfileActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        Intent intent = getIntent();
+        String username = intent.getStringExtra("USERNAME");
+
+        Cursor cursor = retreiveDB.getStudentInfo(username);
+
+        if(cursor.getCount() == 0) {
+            Toasty.error(getApplicationContext(), "Sorry, something went wrong with your info", Toasty.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                emailView.setText(cursor.getString(1));
+                usernameView.setText(cursor.getString(2));
+                favouritesView.setText(cursor.getString(4));
+            }
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toasty.info(getApplicationContext(), "Select logout from drawer menu", Toasty.LENGTH_SHORT).show();
     }
 }

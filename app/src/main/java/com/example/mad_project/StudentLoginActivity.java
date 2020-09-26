@@ -61,6 +61,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
                     if (loginUser) {
                         Intent intent = new Intent(getApplicationContext(), StudentProfileActivity.class);
+                        intent.putExtra("USERNAME", username);
                         startActivity(intent);
                         Toasty.success(getApplicationContext(), "Welcome back " + username, Toasty.LENGTH_SHORT).show();
                     } else {

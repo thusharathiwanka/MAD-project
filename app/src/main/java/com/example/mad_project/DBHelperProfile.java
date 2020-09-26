@@ -66,4 +66,11 @@ public class DBHelperProfile extends SQLiteOpenHelper {
 
         return cursor.getCount() > 0;
     }
+
+    public Cursor getStudentInfo(String username) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_username = ?", new String[] {username});
+
+        return cursor;
+    }
 }
