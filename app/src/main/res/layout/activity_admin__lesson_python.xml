@@ -15,7 +15,7 @@
         android:layout_marginTop="84dp"
         android:layout_marginBottom="623dp"
         android:fontFamily="@font/heading"
-        android:text="Java"
+        android:text="Python"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
