@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/TypeName"
+        android:id="@+id/lname"
         android:layout_width="322dp"
         android:layout_height="46dp"
         android:layout_marginStart="43dp"
@@ -66,10 +66,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TypeName" />
+        app:layout_constraintTop_toBottomOf="@+id/lname" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/lcontent"
         android:layout_width="325dp"
         android:layout_height="212dp"
         android:layout_marginStart="43dp"
@@ -97,10 +97,10 @@
         android:layout_marginRight="319dp"
         android:layout_marginBottom="17dp"
         android:fontFamily="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/lcontent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TypeName" />
+        app:layout_constraintTop_toBottomOf="@+id/lname" />
 
     <Button
         android:id="@+id/button12"
@@ -115,8 +115,8 @@
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
         android:textColor="#FFFFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine"
+        app:layout_constraintBottom_toTopOf="@+id/lcontent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TypeName" />
+        app:layout_constraintTop_toBottomOf="@+id/lname" />
 </androidx.constraintlayout.widget.ConstraintLayout>

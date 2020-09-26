@@ -129,4 +129,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailInput"
         android:autofillHints="" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

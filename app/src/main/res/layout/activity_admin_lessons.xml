@@ -48,6 +48,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goPython"
         android:text="Phython"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button2_3"
@@ -63,10 +64,12 @@
         android:layout_marginBottom="67dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goPHP"
         android:text="PHP"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2_2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

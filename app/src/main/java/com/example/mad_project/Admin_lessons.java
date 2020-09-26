@@ -33,4 +33,14 @@ public class Admin_lessons extends AppCompatActivity {
         Intent i = new Intent(this, Admin_Lesson_java.class);
         startActivity(i);
     }
+
+    public void goPython(View v) {
+        Intent i = new Intent(this, Admin_Lesson_python.class);
+        startActivity(i);
+    }
+
+    public void goPHP(View v) {
+        Intent i = new Intent(this, Admin_lesson_PHP.class);
+        startActivity(i);
+    }
 }

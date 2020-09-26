@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Admin_Lesson_java extends AppCompatActivity {
+public class Admin_lesson_PHP extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin__lesson_java);
+        setContentView(R.layout.activity_admin_lesson_php);
 
         TextView L1 = findViewById(R.id.L1);
         L1.setText(R.string.Les1);
