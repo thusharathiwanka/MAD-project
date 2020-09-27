@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -39,6 +41,7 @@ public class StudentProfileActivity extends AppCompatActivity {
         emailView = findViewById(R.id.email);
         favouritesView = findViewById(R.id.favorites);
         final DBHelperProfile retreiveDB = new DBHelperProfile(this);
+        final AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +78,39 @@ public class StudentProfileActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_feedback) {
 //            startActivity(new Intent(getApplicationContext(),));
                 } else if (id == R.id.nav_log_out) {
-                    startActivity(new Intent(getApplicationContext(), StudentLoginActivity.class));
+                    alert.setMessage("Are you sure you want to logout ?");
+                    alert.setCancelable(false);
+                    alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            startActivity(new Intent(getApplicationContext(), StudentLoginActivity.class));
+                        }
+                    });
+
+                    alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            drawerLayout.closeDrawer(GravityCompat.START);
+                        }
+                    });
+                    alert.create().show();
+                } else if (id == R.id.nav_delete_profile) {
+                    alert.setMessage("Are you sure you want to delete your profile ?");
+                    alert.setCancelable(false);
+                    alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }
+                    });
+
+                    alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            drawerLayout.closeDrawer(GravityCompat.START);
+                        }
+                    });
+                    alert.create().show();
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);

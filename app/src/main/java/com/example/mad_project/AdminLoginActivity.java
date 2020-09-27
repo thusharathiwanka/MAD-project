@@ -36,6 +36,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         //Inserting admins
 //        DBHelperProfile adminDB = new DBHelperProfile(this);
 //        adminDB.insertAdmins("Thushara Thiwanka", "thushara@gmail.com", "thushara01", "thushara01", "Node JS, JavaScript");
