@@ -5,39 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
 
 public class Admin_Lesson_python extends AppCompatActivity {
+
+    ArrayAdapter adminArrayAdapter;
+    DataBaseHelper dataBaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin__lesson_python);
-        
-        TextView L1 = findViewById(R.id.L1);
-        L1.setText(R.string.Les1);
+        setContentView(R.layout.activity_admin__lesson_java);
 
-        TextView L2 = findViewById(R.id.L2);
-        L2.setText(R.string.Les2);
-
-        TextView m1 = findViewById(R.id.m1);
-        m1.setText(R.string.ma1);
-
-        TextView m2 = findViewById(R.id.m2);
-        m2.setText(R.string.ma2);
-
-        TextView m3 = findViewById(R.id.m3);
-        m3.setText(R.string.ma3);
-
-        TextView m4 = findViewById(R.id.m4);
-        m4.setText(R.string.ma4);
-
-        TextView m5 = findViewById(R.id.m5);
-        m5.setText(R.string.ma5);
+        final ListView lv_lessonDetails_py = findViewById(R.id.lv_lessonDetails_py);
 
         Button button10 = findViewById(R.id.button10);
         button10.setText("+");
+
+        dataBaseHelper = new DataBaseHelper(Admin_Lesson_python.this);
+
+        adminArrayAdapter = new ArrayAdapter<AdminModel>(Admin_Lesson_python.this, android.R.layout.simple_list_item_1,dataBaseHelper.getData());
+        lv_lessonDetails_py. setAdapter(adminArrayAdapter);
+
     }
 
     public void goAddLesson(View v) {

@@ -2,10 +2,14 @@ package com.example.mad_project;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String ADD_LESSONS = "ADD_LESSONS";
@@ -43,5 +47,33 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }else{
             return true;
         }
+    }
+
+    public List<AdminModel> getData(){
+        List<AdminModel> returnList = new ArrayList<>();
+
+        String queryString = "SELECT * FROM " + ADD_LESSONS;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            //loop through the results
+            do{
+                int ID = cursor.getInt(0);
+                String lessonName = cursor.getString(1);
+                String content = cursor.getString(2);
+
+                AdminModel newLesson = new AdminModel(ID, lessonName, content);
+                returnList.add(newLesson);
+
+            }while(cursor.moveToNext());
+
+        }else{
+
+        }
+        cursor.close();
+        db.close();
+        return returnList;
     }
 }
