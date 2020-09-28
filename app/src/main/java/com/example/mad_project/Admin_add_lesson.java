@@ -2,6 +2,7 @@ package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,6 +46,9 @@ public class Admin_add_lesson extends AppCompatActivity {
                 try{
                     adminModel = new AdminModel(-1, et_lname.getText().toString(), et_lcontent.getText().toString());
                     Toast.makeText(Admin_add_lesson.this, "Successfully Submitted!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Admin_add_lesson.this,Admin_Lesson_java.class);
+                        startActivity(i);
+
                 }catch(Exception e){
                     Toast.makeText(Admin_add_lesson.this, "Error Occured!", Toast.LENGTH_SHORT).show();
                     adminModel = new AdminModel(-1,"error","error");
@@ -53,7 +57,7 @@ public class Admin_add_lesson extends AppCompatActivity {
                 DataBaseHelper dataBaseHelper = new DataBaseHelper(Admin_add_lesson.this);
 
                 boolean success = dataBaseHelper.addOne(adminModel);
-                Toast.makeText(Admin_add_lesson.this, "Success: "+success,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Admin_add_lesson.this, "Success: "+success,Toast.LENGTH_SHORT).show();
             }
         });
 
