@@ -17,8 +17,6 @@ import java.util.List;
 
 public class ToDoDbHandler extends SQLiteOpenHelper {
 
-    private static final int VERSION = 1;
-    private static final String DB_NAME = "todo";
     private static final String TABLE_NAME = "todo";
 
     // Column names
@@ -29,7 +27,7 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
     private static final String FINISHED = "finished";
 
     public ToDoDbHandler(@Nullable Context context) {
-        super(context, DB_NAME, null, VERSION);
+        super(context, "CodeLearnerDB.db", null, 1);
     }
 
     @Override
@@ -44,10 +42,6 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
                 +FINISHED+" TEXT" +
                 ");";
 
-        /*
-            CREATE TABLE todo (id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, description TEXT,
-            started TEXT,finished TEXT); */
-
         db.execSQL(TABLE_CREATE_QUERY);
     }
 
@@ -61,22 +55,9 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    /*
-            +-------+-------+-------+-------+
-            | Col 1 | col 2 | Col 3 | Col 4 |
-            +-------+-------+-------+-------+
-            |   1   |   2   |  red  |  dog  |
-            +-------+-------+-------+-------+
-            |   2   |   4   |  blue |  cat  |
-            +-------+-------+-------+-------+
-            |   3   |   9   |  red  | bird  |
-            +-------+-------+-------+-------+
-     */
-
     // Add a single todo
     public void addToDo(ToDo toDo){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(TITLE,toDo.getTitle());
@@ -99,27 +80,23 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
-    // Get all todos into a list
     public List<ToDo> getAllToDos(){
 
         List<ToDo> toDos = new ArrayList();
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM "+TABLE_NAME;
-
         Cursor cursor = db.rawQuery(query,null);
 
         if(cursor.moveToFirst()){
             do {
                 // Create new ToDo object
                 ToDo toDo = new ToDo();
-                // mmgby6hh
+
                 toDo.setId(cursor.getInt(0));
                 toDo.setTitle(cursor.getString(1));
                 toDo.setDescription(cursor.getString(2));
                 toDo.setStarted(cursor.getLong(3));
                 toDo.setFinished(cursor.getLong(4));
-
-                //toDos [obj,objs,asas,asa]
                 toDos.add(toDo);
             }while (cursor.moveToNext());
         }
@@ -155,11 +132,9 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
         }
         return null;
     }
-
     // Update a single todo
     public int updateSingleToDo(ToDo toDo){
         SQLiteDatabase db = getWritableDatabase();
-
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(TITLE,toDo.getTitle());
