@@ -35,17 +35,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/profileImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <EditText
+        android:id="@+id/emailEditInput"
+        android:layout_width="328dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginBottom="32dp"
-        android:contentDescription="@string/profileimg"
-        app:layout_constraintBottom_toTopOf="@+id/emailEditInput"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/medium"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/profileimg" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.778" />
 
     <EditText
         android:id="@+id/usernameEditInput"
@@ -60,10 +67,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/passwordEditInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditInput"
-        app:layout_constraintVertical_bias="0.537" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
         android:id="@+id/passwordEditInput"
@@ -79,29 +86,22 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        app:layout_constraintVertical_bias="0.614" />
 
-    <EditText
-        android:id="@+id/emailEditInput"
-        android:layout_width="328dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="32dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="@font/medium"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/passwordEditInput"
+    <ImageView
+        android:id="@+id/profileImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="@string/profileimg"
+        app:layout_constraintBottom_toTopOf="@+id/emailEditInput"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:srcCompat="@drawable/profileimg" />
 
     <Button
         android:id="@+id/saveProfileBtn"
@@ -119,7 +119,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.427"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/favoritesEditInput"
+        android:layout_width="328dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:fontFamily="@font/medium"
+        android:hint="@string/favourites"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/saveProfileBtn"
+        app:layout_constraintEnd_toEndOf="@+id/passwordEditInput"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordEditInput"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditInput"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
