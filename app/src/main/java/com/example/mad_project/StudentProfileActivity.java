@@ -27,8 +27,8 @@ public class StudentProfileActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     TextView usernameView, emailView, favouritesView;
-    String userName = null;
-    String email = null, username = null, password = null, favourite = null;
+    String userName;
+    String email, username, password, favourite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class StudentProfileActivity extends AppCompatActivity {
                 } else if (id == R.id.nav_about) {
                     startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 } else if (id == R.id.nav_feedback) {
-//            startActivity(new Intent(getApplicationContext(),));
+                    startActivity(new Intent(getApplicationContext(), activity_feedback.class));
                 } else if (id == R.id.nav_log_out) {
                     alert.setMessage("Are you sure you want to logout ?");
                     alert.setCancelable(false);
@@ -128,6 +128,20 @@ public class StudentProfileActivity extends AppCompatActivity {
 
         if(cursor.getCount() == 0) {
             Toasty.error(getApplicationContext(), "Sorry, something went wrong with your info", Toasty.LENGTH_SHORT).show();
+            Intent intent1 = getIntent();
+            String username = intent1.getStringExtra("USERNAME");
+            System.out.println(username);
+            Cursor cursor1 = retreiveDB.getStudentInfo(userName);
+
+            while (cursor1.moveToNext()) {
+                email = cursor.getString(1);
+                emailView.setText(email);
+                username  = cursor.getString(2);
+                usernameView.setText(username);
+                password = cursor.getString(3);
+                favourite = cursor.getString(4);
+                favouritesView.setText(favourite);
+            }
             return;
         } else {
             while (cursor.moveToNext()) {

@@ -40,6 +40,7 @@ public class EditStudentActivity extends AppCompatActivity {
         final String username = intent.getStringExtra("USERNAME");
 
         usernameEdit.setText(username);
+        usernameEdit.setEnabled(false);
         emailEdit.setText(intent.getStringExtra("EMAIL"));
         passwordEdit.setText(intent.getStringExtra("PASSWORD"));
         favouriteEdit.setText(intent.getStringExtra("FAVOURITES"));
@@ -53,12 +54,12 @@ public class EditStudentActivity extends AppCompatActivity {
                 String favouritesUpdate = favouriteEdit.getText().toString();
 
                 boolean isUpdated =  updateDB.updateStudent(username, emailUpdate, usernameUpdate, passwordUpdate, favouritesUpdate);
-                System.out.println(isUpdated);
 
                 if(isUpdated) {
                     Toasty.success(getApplicationContext(), "Your details has been updated successfully", Toasty.LENGTH_SHORT).show();
-                    Intent intent1 = new Intent(getApplicationContext(), StudentProfileActivity.class);
-                    startActivity(intent1);
+                    Intent intent = new Intent(getApplicationContext(), StudentProfileActivity.class);
+                    intent.putExtra("USERNAME", username);
+                    startActivity(intent);
                 } else {
                     Toasty.error(getApplicationContext(), "Something went wrong when updating your details", Toasty.LENGTH_SHORT).show();
                 }

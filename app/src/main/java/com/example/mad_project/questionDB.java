@@ -48,10 +48,20 @@ public class questionDB extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    public int countQuestion(){
+        SQLiteDatabase db = getWritableDatabase();
+        String Query = "SELECT * From "+TABLE_NAME;
+
+        Cursor cursor =  db.rawQuery(Query,null);
+        return cursor.getCount();
+    }
+
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res1 = db.rawQuery("select * from " + TABLE_NAME, null);
         return res1;
     }
+
+
 
  }

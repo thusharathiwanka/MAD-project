@@ -11,17 +11,12 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin_lesson_update"></activity>
-        <activity android:name=".Admin_lesson_delete" />
-        <activity android:name=".ToDoMainActivity" />
-        <activity
-            android:name=".ToDoDbHandler"
+        <activity android:name=".ToDoMainActivity"/>
+        <activity android:name=".ToDoDbHandler"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name=".ToDoAdapter"
+        <activity android:name=".ToDoAdapter"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name=".ToDo"
+        <activity android:name=".ToDo"
             tools:ignore="Instantiatable" />
         <activity android:name=".EditToDo" />
         <activity android:name=".AddToDo" />
@@ -65,8 +60,8 @@
         </activity>
         <activity android:name=".Admin_Lesson_java" />
         <activity android:name=".Admin_add_lesson" />
-        <activity android:name=".Admin_Lesson_python" />
-        <activity android:name=".Admin_lesson_PHP" />
+        <activity android:name=".Admin_Lesson_python"/>
+        <activity android:name=".Admin_lesson_PHP"/>
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
