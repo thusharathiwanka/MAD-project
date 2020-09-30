@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class Admin_lessons extends AppCompatActivity {
 
@@ -28,7 +32,6 @@ public class Admin_lessons extends AppCompatActivity {
         button2_3.setText(R.string.btn2_3);
 
     }
-
     public void goJava(View v) {
         Intent i = new Intent(this, Admin_Lesson_java.class);
         startActivity(i);

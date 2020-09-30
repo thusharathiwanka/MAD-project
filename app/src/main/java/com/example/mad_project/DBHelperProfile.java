@@ -76,6 +76,23 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public boolean updateStudent(String currentUsername, String email, String username, String password, String favourites) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("STUDENT_EMAIL", email);
+        contentValues.put("STUDENT_USERNAME", username);
+        contentValues.put("STUDENT_PASSWORD", password);
+        contentValues.put("STUDENT_FAVOURITES", favourites);
+        System.out.println(currentUsername);
+        long result = sqLiteDatabase.update("students", contentValues, "student_username = ?", new String[] {currentUsername});
+        return result != -1;
+    }
+
+    public int deleteStudent(String username) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        return sqLiteDatabase.delete("students", "student_username = ?", new String[] {username});
+    }
+
     public boolean insertAdmins(String name, String email, String username, String password, String subjects) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

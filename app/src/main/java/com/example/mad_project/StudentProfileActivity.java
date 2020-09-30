@@ -27,6 +27,8 @@ public class StudentProfileActivity extends AppCompatActivity {
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     TextView usernameView, emailView, favouritesView;
+    String userName = null;
+    String email = null, username = null, password = null, favourite = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,14 +44,6 @@ public class StudentProfileActivity extends AppCompatActivity {
         favouritesView = findViewById(R.id.favorites);
         final DBHelperProfile retreiveDB = new DBHelperProfile(this);
         final AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-        editProfileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), EditStudentActivity.class);
-                startActivity(intent);
-            }
-        });
 
         menuBtn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -100,7 +94,16 @@ public class StudentProfileActivity extends AppCompatActivity {
                     alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            int isDeleted = retreiveDB.deleteStudent(userName);
+
+                            if(isDeleted == 1) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+
+                                Toasty.success(getApplicationContext(), "Your account has been deleted successfully", Toasty.LENGTH_SHORT).show();
+                            } else {
+                                Toasty.error(getApplicationContext(), "Something went wrong when deleting your account", Toasty.LENGTH_SHORT).show();
+                            }
                         }
                     });
 
@@ -119,19 +122,36 @@ public class StudentProfileActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-        String username = intent.getStringExtra("USERNAME");
+        userName = intent.getStringExtra("USERNAME");
 
-        Cursor cursor = retreiveDB.getStudentInfo(username);
+        Cursor cursor = retreiveDB.getStudentInfo(userName);
 
         if(cursor.getCount() == 0) {
             Toasty.error(getApplicationContext(), "Sorry, something went wrong with your info", Toasty.LENGTH_SHORT).show();
+            return;
         } else {
             while (cursor.moveToNext()) {
-                emailView.setText(cursor.getString(1));
-                usernameView.setText(cursor.getString(2));
-                favouritesView.setText(cursor.getString(4));
+                email = cursor.getString(1);
+                emailView.setText(email);
+                username  = cursor.getString(2);
+                usernameView.setText(username);
+                password = cursor.getString(3);
+                favourite = cursor.getString(4);
+                favouritesView.setText(favourite);
             }
         }
+
+        editProfileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), EditStudentActivity.class);
+                intent.putExtra("USERNAME", username);
+                intent.putExtra("EMAIL", email);
+                intent.putExtra("PASSWORD", password);
+                intent.putExtra("FAVOURITES", favourite);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

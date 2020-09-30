@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mad_project">
 
     <application
@@ -10,7 +11,16 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_contact_via_gmail"></activity>
+        <activity android:name=".ToDoMainActivity"></activity>
+        <activity android:name=".ToDoDbHandler"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".ToDoAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".ToDo"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".EditToDo" />
+        <activity android:name=".AddToDo" />
+        <activity android:name=".activity_contact_via_gmail" />
         <activity android:name=".activity_feedback" />
         <activity
             android:name=".StudentDrawerActivity"
@@ -50,6 +60,8 @@
         </activity>
         <activity android:name=".Admin_Lesson_java" />
         <activity android:name=".Admin_add_lesson" />
+        <activity android:name=".Admin_Lesson_python"/>
+        <activity android:name=".Admin_lesson_PHP"/>
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
