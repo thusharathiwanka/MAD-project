@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:text="You have x ToDos In Today"
+        android:text="@string/No_todos"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/add"
         app:layout_constraintEnd_toStartOf="@+id/add"
@@ -40,7 +40,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
-        android:text=" Add ToDo"
+        android:text="@string/AddToDo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/todocount" />
