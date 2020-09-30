@@ -32,18 +32,6 @@ public class Admin_Lesson_java extends AppCompatActivity {
 
         ShowLessonsOnListView(lv_lessonDetails_j);
 
-        //to delete
-        lv_lessonDetails_j.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                AdminModel clickedLesson = (AdminModel) adapterView.getItemAtPosition(i);
-                dataBaseHelper.deleteOne(clickedLesson);
-                ShowLessonsOnListView(lv_lessonDetails_j);
-                Toast.makeText(Admin_Lesson_java.this, "Deleted "+ clickedLesson.toString(), Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
     }
 
     private void ShowLessonsOnListView(ListView lv_lessonDetails_j) {
@@ -53,6 +41,11 @@ public class Admin_Lesson_java extends AppCompatActivity {
 
     public void goAddLesson(View v) {
         Intent i = new Intent(this, Admin_add_lesson.class);
+        startActivity(i);
+    }
+
+    public void goDeleteLesson(View v) {
+        Intent i = new Intent(this, Admin_lesson_delete.class);
         startActivity(i);
     }
 }
