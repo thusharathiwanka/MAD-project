@@ -19,15 +19,15 @@ public class Admin_Lesson_python extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__lesson_python);
 
-       // final ListView lv_lessonDetails_py = findViewById(R.id.lv_lessonDetails_py);
+        final ListView lv_lessonDetails_py = findViewById(R.id.lv_lessonDetails_py);
 
         Button button10 = findViewById(R.id.button10);
         button10.setText("+");
 
-       // dataBaseHelper = new DataBaseHelper(Admin_Lesson_python.this);
+        dataBaseHelper = new DataBaseHelper(Admin_Lesson_python.this);
 
-        //adminArrayAdapter = new ArrayAdapter<AdminModel>(Admin_Lesson_python.this, android.R.layout.simple_list_item_1,dataBaseHelper.getData());
-       // lv_lessonDetails_py. setAdapter(adminArrayAdapter);
+        adminArrayAdapter = new ArrayAdapter<AdminModel>(Admin_Lesson_python.this, android.R.layout.simple_list_item_1,dataBaseHelper.getData());
+        lv_lessonDetails_py. setAdapter(adminArrayAdapter);
 
     }
 

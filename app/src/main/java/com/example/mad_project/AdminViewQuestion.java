@@ -16,6 +16,9 @@ public class AdminViewQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_view_question);
 
+        Button button3 = findViewById(R.id.addQuestion);
+        button3.setText("+");
+
         button = findViewById(R.id.replyBtn);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
