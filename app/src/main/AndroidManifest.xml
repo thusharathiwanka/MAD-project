@@ -62,6 +62,7 @@
         <activity android:name=".Admin_add_lesson" />
         <activity android:name=".Admin_Lesson_python"/>
         <activity android:name=".Admin_lesson_PHP"/>
+        <activity android:name=".Admin_lesson_delete"/>
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
