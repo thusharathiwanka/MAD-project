@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class Admin_Lesson_java extends AppCompatActivity {
 
@@ -26,9 +30,25 @@ public class Admin_Lesson_java extends AppCompatActivity {
 
         dataBaseHelper = new DataBaseHelper(Admin_Lesson_java.this);
 
+        ShowLessonsOnListView(lv_lessonDetails_j);
+
+        //to delete
+        lv_lessonDetails_j.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                AdminModel clickedLesson = (AdminModel) adapterView.getItemAtPosition(i);
+                dataBaseHelper.deleteOne(clickedLesson);
+                ShowLessonsOnListView(lv_lessonDetails_j);
+                Toast.makeText(Admin_Lesson_java.this, "Deleted "+ clickedLesson.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
+    }
+
+    private void ShowLessonsOnListView(ListView lv_lessonDetails_j) {
         adminArrayAdapter = new ArrayAdapter<AdminModel>(Admin_Lesson_java.this, android.R.layout.simple_list_item_1,dataBaseHelper.getData());
         lv_lessonDetails_j. setAdapter(adminArrayAdapter);
-
     }
 
     public void goAddLesson(View v) {

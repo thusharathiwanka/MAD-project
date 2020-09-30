@@ -49,6 +49,20 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean deleteOne(AdminModel adminModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = "DELETE FROM " + ADD_LESSONS+ " WHERE " + COLUMN_ID+ " = " + adminModel.getId();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public List<AdminModel> getData(){
         List<AdminModel> returnList = new ArrayList<>();
 
