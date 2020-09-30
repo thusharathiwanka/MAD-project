@@ -42,7 +42,7 @@ public class AddQuestion extends AppCompatActivity {
                 }else{
                     Toast.makeText(AddQuestion.this,"Data Not Inserted",Toast.LENGTH_LONG).show();
                 }
-                //startActivity(new Intent(getApplicationContext(),AdminViewQuestion.class));
+                startActivity(new Intent(getApplicationContext(),AdminViewQuestion.class));
 
                 /*9get data from edit text
                 String email = editText1.getText().toString();
