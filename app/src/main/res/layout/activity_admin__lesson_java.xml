@@ -52,41 +52,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Java" />
-
-    <Button
-        android:id="@+id/lessonDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="185dp"
-        android:layout_marginRight="185dp"
-        android:layout_marginBottom="47dp"
-        android:onClick="goDeleteLesson"
-        android:text="DELETE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lv_lessonDetails_j"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/lessonUpdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
-        android:layout_marginBottom="44dp"
-        android:text="UPDATE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintStart_toEndOf="@+id/lessonDelete"
-        app:layout_constraintTop_toBottomOf="@+id/lv_lessonDetails_j" />
+        app:layout_constraintTop_toBottomOf="@+id/Java"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
