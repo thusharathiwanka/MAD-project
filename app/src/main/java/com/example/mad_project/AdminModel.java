@@ -20,11 +20,9 @@ public class AdminModel {
 
     @Override
     public String toString() {
-        return "AdminModel{" +
-                "id=" + id +
-                ", lname='" + lname + '\'' +
-                ", lcontent='" + lcontent + '\'' +
-                '}';
+        return "" +
+                "Lesson Name='" + lname + '\'' +
+                "\nContent='" + lcontent + '\'';
     }
 
 
