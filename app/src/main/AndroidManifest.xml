@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mad_project">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -13,11 +11,17 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity"/>
         <activity android:name=".ToDoMainActivity" />
-        <activity
-            android:name=".ToDoDbHandler"
-            tools:ignore="Instantiatable" />
+        <activity android:name=".ToDoDbHandler"/>
+        <activity android:name=".ToDoMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ToDoDbHandler"></activity>
         <activity
             android:name=".ToDoAdapter"
             tools:ignore="Instantiatable" />
@@ -66,8 +70,14 @@
         </activity>
         <activity android:name=".Admin_Lesson_java" />
         <activity android:name=".Admin_add_lesson" />
+<<<<<<< HEAD
         <activity android:name=".Admin_Lesson_python" />
         <activity android:name=".Admin_lesson_PHP" />
+=======
+        <activity android:name=".Admin_Lesson_python"/>
+        <activity android:name=".Admin_lesson_PHP"/>
+        <activity android:name=".Admin_lesson_update"/>
+>>>>>>> 411ed5b5a5ed690ff9969b8aaf494b078413dbab
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -87,19 +97,9 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".StudentRegisterActivity" />
         <activity android:name=".AdminLoginActivity" />
-        <activity android:name=".StudentLoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".StudentLoginActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

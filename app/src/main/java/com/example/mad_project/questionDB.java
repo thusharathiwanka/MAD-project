@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static android.os.Build.ID;
 import static android.provider.Contacts.SettingsColumns.KEY;
 
@@ -19,6 +22,7 @@ public class questionDB extends SQLiteOpenHelper {
     public static final String col_2 = "Email";
     public static final String col_3 = "Module";
     public static  final String col_4 = "Question";
+    public  static  final String col_5 = "Answer";
 
     public questionDB(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -37,7 +41,22 @@ public class questionDB extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public boolean insertData(String email, String module, String question){
+    public void add(Question ques){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(col_2,ques.getEmail());
+        contentValues.put(col_3,ques.getModule());
+        contentValues.put(col_4,ques.getQuestion());
+
+        //Save the data to the table.
+        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+        ///close thw database
+        sqLiteDatabase.close();
+    }
+
+
+    /*public boolean insertData(String email, String module, String question){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(col_2,email);
@@ -46,7 +65,7 @@ public class questionDB extends SQLiteOpenHelper {
         long result = db.insert(TABLE_NAME,null,contentValues);
 
         return result != -1;
-    }
+    }*/
 
     public int countQuestion(){
         SQLiteDatabase db = getWritableDatabase();
@@ -56,12 +75,38 @@ public class questionDB extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
-    public Cursor getAllData() {
+    /*public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res1 = db.rawQuery("select * from " + TABLE_NAME, null);
         return res1;
-    }
+    }*/
 
+    public List<Question> getAllData(){
+        List<Question> ques2 = new ArrayList<>();
+        String query = "SELECT* FROM "+TABLE_NAME ;
+        SQLiteDatabase db2 = getReadableDatabase();
+
+
+        Cursor cursor = db2.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do {
+                int ID = cursor.getInt(0);
+                String Email = cursor.getString(1);
+                String Module = cursor.getString(2);
+                String Question = cursor.getString(3);
+
+                Question ques1 = new Question(ID,Email,Module,Question);
+                ques2.add(ques1);
+
+            }while(cursor.moveToNext());
+        }else{
+
+        }
+        cursor.close();
+        db2.close();
+        return ques2;
+    }
 
 
  }

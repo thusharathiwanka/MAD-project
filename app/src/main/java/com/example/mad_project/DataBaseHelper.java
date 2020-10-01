@@ -90,4 +90,38 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.close();
         return returnList;
     }
+
+    public AdminModel getSingleAdminModel(int id){
+        SQLiteDatabase db = getWritableDatabase();
+
+        Cursor cursor = db.query(ADD_LESSONS, new String[]{COLUMN_ID, COLUMN_LESSON_NAME, COLUMN_CONTENT}, COLUMN_ID + "= ?", new String[]{String.valueOf(id)}, null,null,null);
+
+        AdminModel adminModel;
+        if(cursor != null){
+            cursor.moveToFirst();
+            adminModel = new AdminModel(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2)
+
+                    );
+            return adminModel;
+        }
+        return null;
+    }
+
+    public int update(AdminModel adminModel){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_LESSON_NAME, adminModel.getLname());
+        cv.put(COLUMN_CONTENT, adminModel.getLcontent());
+
+        int status = db.update(ADD_LESSONS, cv, COLUMN_ID+" =?",
+                new String[]{String.valueOf(adminModel.getId())});
+
+        db.close();
+        return status;
+    }
+
 }

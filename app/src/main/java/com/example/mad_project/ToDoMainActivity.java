@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,7 @@ public class ToDoMainActivity extends AppCompatActivity {
     private ToDoDbHandler dbHandler;
     private List<ToDo> toDos;
 
+    FloatingActionButton mail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,5 +93,9 @@ public class ToDoMainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void gomain(View view){
+        Intent intent = new Intent(this, SelectFavouritesActivity.class);
+        startActivity(intent);
     }
 }
