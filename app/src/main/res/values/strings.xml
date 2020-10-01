@@ -109,12 +109,10 @@
     <string name="send">Send</string>
     <string name="entersub" />
     <string name="todoimg">todoimg</string>
-<<<<<<< HEAD
     <string name="forget_your_password">Forget your Password ?</string>
     <string name="reset_now">Reset Now</string>
     <string name="enter_your_email">Enter your email</string>
     <string name="submit">Submit</string>
-=======
     <string name="addtodo">Add a New ToDo</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
@@ -132,5 +130,4 @@
     <string name="DisplayTitle">Title</string>
     <string name="DisplayDescription">Description</string>
     <string name="TODOdone">done</string>
->>>>>>> 411ed5b5a5ed690ff9969b8aaf494b078413dbab
 </resources>
