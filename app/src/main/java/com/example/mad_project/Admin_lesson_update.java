@@ -57,21 +57,6 @@ public class Admin_lesson_update extends AppCompatActivity {
                 Toast.makeText(Admin_lesson_update.this, "Successfully Updated!", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Admin_lesson_update.this,Admin_Lesson_java.class));
 
-               /* try{
-                   /* adminModel = new AdminModel(-1, et_lname.getText().toString(), et_lcontent.getText().toString());
-                    Toast.makeText(Admin_lesson_update.this, "Successfully Updated!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(Admin_lesson_update.this,Admin_Lesson_java.class);
-                    startActivity(i);
-
-                }catch(Exception e){
-                    Toast.makeText(Admin_lesson_update.this, "Error Occured!", Toast.LENGTH_SHORT).show();
-                    adminModel = new AdminModel(-1,"error","error");
-                }
-
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(Admin_lesson_update.this);
-
-                boolean success = dataBaseHelper.addOne(adminModel);*/
-                //Toast.makeText(Admin_add_lesson.this, "Success: "+success,Toast.LENGTH_SHORT).show();
             }
         });
 
