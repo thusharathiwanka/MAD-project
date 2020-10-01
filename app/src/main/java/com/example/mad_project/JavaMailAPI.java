@@ -13,16 +13,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import es.dmoral.toasty.Toasty;
+
 public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
-
-    //Add those line in dependencies
-    //implementation files('libs/activation.jar')
-    //implementation files('libs/additionnal.jar')
-    //implementation files('libs/mail.jar')
-
-    //Need INTERNET permission
-
-    //Variables
     private Context mContext;
     private Session mSession;
 
@@ -53,8 +46,7 @@ public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
         //Dismiss progress dialog when message successfully send
         mProgressDialog.dismiss();
 
-        //Show success toast
-        Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
+        Toasty.success(mContext, "Your password has been changed. Please check your emails", Toasty.LENGTH_SHORT).show();
     }
 
     @Override
@@ -93,27 +85,6 @@ public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
             mm.setText(mMessage);
             //Sending email
             Transport.send(mm);
-
-//            BodyPart messageBodyPart = new MimeBodyPart();
-//
-//            messageBodyPart.setText(message);
-//
-//            Multipart multipart = new MimeMultipart();
-//
-//            multipart.addBodyPart(messageBodyPart);
-//
-//            messageBodyPart = new MimeBodyPart();
-//
-//            DataSource source = new FileDataSource(filePath);
-//
-//            messageBodyPart.setDataHandler(new DataHandler(source));
-//
-//            messageBodyPart.setFileName(filePath);
-//
-//            multipart.addBodyPart(messageBodyPart);
-
-//            mm.setContent(multipart);
-
         } catch (MessagingException e) {
             e.printStackTrace();
         }

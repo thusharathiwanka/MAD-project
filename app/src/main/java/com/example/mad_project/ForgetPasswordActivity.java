@@ -2,6 +2,7 @@ package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,6 +40,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                     if(isChanged) {
                         sendMail(emailInput, newPassword);
+                        Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
+                        startActivity(intent);
                     }
                 } else {
                     Toasty.error(getApplicationContext(), "Sorry your email does not match with any records", Toasty.LENGTH_SHORT).show();
