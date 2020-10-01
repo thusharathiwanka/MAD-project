@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="gomain"
+    android:onClick="Gomain"
     tools:context=".ToDoMainActivity">
 
     <ListView
@@ -54,7 +54,7 @@
         android:layout_marginBottom="52dp"
         android:background="#FFFFFF"
         android:focusable="true"
-        android:onClick="gomain"
+        android:onClick="Gomain"
         app:backgroundTint="#3D5AFE"
         app:layout_constraintBottom_toTopOf="@+id/add"
         app:layout_constraintEnd_toEndOf="parent"

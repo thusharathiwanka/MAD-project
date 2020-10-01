@@ -2,6 +2,7 @@ package com.example.mad_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,7 +19,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ToDoMainActivity extends AppCompatActivity {
 
     private Button add;
@@ -28,7 +28,7 @@ public class ToDoMainActivity extends AppCompatActivity {
     private ToDoDbHandler dbHandler;
     private List<ToDo> toDos;
 
-    FloatingActionButton mail;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +40,6 @@ public class ToDoMainActivity extends AppCompatActivity {
         listView = findViewById(R.id.todolist);
         count = findViewById(R.id.todocount);
         toDos = new ArrayList<>();
-
         toDos = dbHandler.getAllToDos();
 
         ToDoAdapter adapter = new ToDoAdapter(context,R.layout.single_todo,toDos);
@@ -92,9 +91,9 @@ public class ToDoMainActivity extends AppCompatActivity {
                 builder.show();
             }
         });
-
     }
-    public void gomain(View view){
+
+    public void Gomain(View view){
         Intent intent = new Intent(this, SelectFavouritesActivity.class);
         startActivity(intent);
     }

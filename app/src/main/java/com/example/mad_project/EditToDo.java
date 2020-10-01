@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 public class EditToDo extends AppCompatActivity {
 
-    private EditText title,des;
+    private EditText title,description;
     private Button edit;
     private ToDoDbHandler dbHandler;
     private Context context;
@@ -26,20 +26,20 @@ public class EditToDo extends AppCompatActivity {
         dbHandler = new ToDoDbHandler(context);
 
         title = findViewById(R.id.editToDoTextTitle);
-        des = findViewById(R.id.editToDoTextDescription);
+        description = findViewById(R.id.editToDoTextDescription);
         edit = findViewById(R.id.buttonEdit);
 
         final String id = getIntent().getStringExtra("id");
         ToDo todo = dbHandler.getSingleToDo(Integer.parseInt(id));
 
         title.setText(todo.getTitle());
-        des.setText(todo.getDescription());
+        description.setText(todo.getDescription());
 
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String titleText = title.getText().toString();
-                String decText = des.getText().toString();
+                String decText = description.getText().toString();
                 updateDate = System.currentTimeMillis();
 
                 ToDo toDo = new ToDo(Integer.parseInt(id),titleText,decText,updateDate,0);
