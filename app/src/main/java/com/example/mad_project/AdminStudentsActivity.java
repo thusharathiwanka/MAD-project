@@ -22,6 +22,8 @@ public class AdminStudentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_students);
 
+        usersList = findViewById(R.id.usersList);
+
         studentsList = new ArrayList<>();
         viewStudents();
     }
@@ -32,7 +34,9 @@ public class AdminStudentsActivity extends AppCompatActivity {
         if(cursor.getCount() == 0) {
             Toasty.error(getApplicationContext(), "There are no registered users", Toasty.LENGTH_SHORT).show();
         } else {
-            studentsList.add(cursor.getString(1));
+            while (cursor.moveToNext()) {
+                studentsList.add(cursor.getString(1));
+            }
         }
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, studentsList);
