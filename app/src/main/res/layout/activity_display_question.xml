@@ -57,79 +57,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
 
+    <ListView
+        android:id="@+id/questionID2"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/addQuestion"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        app:layout_constraintVertical_bias="0.068"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/addQuestion2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/admin_add_lessons"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
-        android:id="@+id/display"
-        android:layout_width="254dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="40dp"
-        android:text="@string/question"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/showAnswer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
-
-    <Button
-        android:id="@+id/editBtn"
-        android:layout_width="117dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="212dp"
-        android:background="@drawable/gradientbutton"
-        android:fontFamily="@font/medium"
-        android:text="@string/update"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:id="@+id/countQuestion2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="168dp"
+        android:text="You have x number of question."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/deleteBtn"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
-        app:layout_constraintVertical_bias="0.172" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/showAnswer"
-        android:layout_width="210dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginBottom="292dp"
-        android:background="@drawable/gradientbutton"
-        android:fontFamily="@font/medium"
-        android:text="@string/show_reply"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
-        app:layout_constraintVertical_bias="0.172" />
 
-    <Button
-        android:id="@+id/deleteBtn"
-        android:layout_width="120dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="212dp"
-        android:background="@drawable/gradientbutton"
-        android:fontFamily="@font/medium"
-        android:text="@string/delete"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toEndOf="@+id/postBtn"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
-        app:layout_constraintVertical_bias="0.172" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

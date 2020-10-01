@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class AdminViewQuestion extends AppCompatActivity {
 
     ArrayAdapter questionArrayAdapter;
-    private Button button,button3;
+    private Button button;
     private TextView textView1;
     private ListView listView1;
     private questionDB dbhandler;
@@ -24,8 +24,7 @@ public class AdminViewQuestion extends AppCompatActivity {
         setContentView(R.layout.activity_admin_view_question);
 
         dbhandler = new questionDB(this);
-        button3 = findViewById(R.id.addQuestion);
-        button3.setText("+");
+
         textView1 = findViewById(R.id.countQuestion);
         listView1 = findViewById(R.id.questionID);
         button = findViewById(R.id.replyBtn);
@@ -42,19 +41,13 @@ public class AdminViewQuestion extends AppCompatActivity {
             }
         });
 
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),AddQuestion.class);
-                startActivity(intent);
-            }
-        });
+
 
         showQuestionOnListView(listView1);
 
     }
     public void openActivity2(){
-        Intent intent = new Intent(this, ReplyQuestionActivity.class);
+        Intent intent = new Intent(this, ShowAnswerActivity.class);
         startActivity(intent);
     }
 

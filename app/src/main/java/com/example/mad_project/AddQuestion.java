@@ -52,10 +52,10 @@ public class AddQuestion extends AppCompatActivity {
                     Toast.makeText(AddQuestion.this,"Data Inserted",Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(AddQuestion.this,"Data Not Inserted",Toast.LENGTH_LONG).show();
-                }
+                }*/
                 startActivity(new Intent(getApplicationContext(),AdminViewQuestion.class));
 
-                9get data from edit text
+                /*get data from edit text
                 String email = editText1.getText().toString();
                 String module = editText2.getText().toString();
                 String question = editText3.getText().toString();

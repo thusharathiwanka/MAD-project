@@ -23,12 +23,11 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question{" +
+        return "" +
                 "id=" + id +
-                ", email='" + email + '\'' +
-                ", module='" + module + '\'' +
-                ", question='" + question + '\'' +
-                '}';
+                "\nemail='" + email + '\'' +
+                "\nmodule='" + module + '\'' +
+                "\nquestion='" + question + '\'' ;
     }
 
     public int getId() {
