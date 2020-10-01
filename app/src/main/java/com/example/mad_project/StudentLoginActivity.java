@@ -14,7 +14,7 @@ import es.dmoral.toasty.Toasty;
 
 public class StudentLoginActivity extends AppCompatActivity {
     ImageView backBtn;
-    TextView adminLogin;
+    TextView adminLogin, forgetPassword;
     Button loginBtn;
     EditText usernameInput, passwordInput;
 
@@ -28,6 +28,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
         backBtn = findViewById(R.id.back);
         adminLogin = findViewById(R.id.adminLogin);
+        forgetPassword = findViewById(R.id.forgetPassword);
         loginBtn = findViewById(R.id.loginBtn);
         usernameInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
@@ -44,6 +45,14 @@ public class StudentLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AdminLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
                 startActivity(intent);
             }
         });

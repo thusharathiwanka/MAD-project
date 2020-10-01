@@ -127,7 +127,6 @@ public class StudentProfileActivity extends AppCompatActivity {
         Cursor cursor = retreiveDB.getStudentInfo(userName);
 
         if(cursor.getCount() == 0) {
-            Toasty.error(getApplicationContext(), "Sorry, something went wrong with your info", Toasty.LENGTH_SHORT).show();
             Intent intent1 = getIntent();
             String username = intent1.getStringExtra("USERNAME");
             System.out.println(username);

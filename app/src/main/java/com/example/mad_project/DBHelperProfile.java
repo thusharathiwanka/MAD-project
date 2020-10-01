@@ -92,6 +92,21 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         return sqLiteDatabase.delete("students", "student_username = ?", new String[] {username});
     }
 
+    public boolean checkEmailForget(String email) {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students WHERE student_email = ?", new String[] {email});
+        return cursor.getCount() > 0;
+    }
+
+
+    public boolean updatePassword(String emailInput, String newPassword) {
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("student_password", newPassword);
+        long result = sqLiteDatabase.update("students", contentValues, "student_email = ?", new String[] {emailInput});
+        return result != -1;
+    }
+
     public boolean insertAdmins(String name, String email, String username, String password, String subjects) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -102,7 +117,6 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         contentValues.put("ADMIN_SUBJECTS", subjects);
 
         long result = sqLiteDatabase.insert("admins", null, contentValues);
-
         return result != -1;
     }
 
@@ -111,5 +125,11 @@ public class DBHelperProfile extends SQLiteOpenHelper {
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM admins WHERE admin_username = ? AND admin_password = ?", new String[] {username, password});
 
         return cursor.getCount() > 0;
+    }
+
+    public Cursor viewAllStudents() {
+        SQLiteDatabase sqLiteDatabase = getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM students", null);
+        return cursor;
     }
 }

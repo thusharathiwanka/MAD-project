@@ -109,4 +109,8 @@
     <string name="send">Send</string>
     <string name="entersub" />
     <string name="todoimg">todoimg</string>
+    <string name="forget_your_password">Forget your Password ?</string>
+    <string name="reset_now">Reset Now</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="submit">Submit</string>
 </resources>
