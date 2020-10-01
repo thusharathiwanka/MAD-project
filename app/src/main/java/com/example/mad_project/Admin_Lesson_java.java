@@ -3,7 +3,6 @@ package com.example.mad_project;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,7 +54,7 @@ public class Admin_Lesson_java extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(Admin_Lesson_java.this, Admin_Lesson_java.class);
-
+                        startActivity(intent);
                     }
                 });
 
