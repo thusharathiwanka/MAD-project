@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mad_project">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +13,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ForgetPasswordActivity"/>
+        <activity android:name=".EditQuestion"></activity>
+        <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".ToDoMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,7 +36,13 @@
             android:name=".StudentDrawerActivity"
             android:label="@string/title_activity_student_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ReplyQuestionActivity" />
+        <activity android:name=".ReplyQuestionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AdminViewQuestion">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,8 +50,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".ShowAnswerActivity" />
-        <activity android:name=".DisplayQuestionActivity" >
+        <activity android:name=".ShowAnswerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayQuestionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,7 +90,7 @@
         <activity android:name=".Admin_add_lesson" />
         <activity android:name=".Admin_Lesson_python" />
         <activity android:name=".Admin_lesson_PHP" />
-        <activity android:name=".Admin_lesson_update"/>
+        <activity android:name=".Admin_lesson_update" />
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

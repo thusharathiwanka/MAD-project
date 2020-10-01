@@ -129,4 +129,5 @@
     <string name="DisplayTitle">Title</string>
     <string name="DisplayDescription">Description</string>
     <string name="TODOdone">done</string>
+    <string name="Edit">Edit </string>
 </resources>

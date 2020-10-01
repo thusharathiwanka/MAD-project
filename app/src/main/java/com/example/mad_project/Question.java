@@ -24,7 +24,7 @@ public class Question {
     @Override
     public String toString() {
         return "" +
-                "id=" + id +
+                "\nid=" + id +
                 "\nemail='" + email + '\'' +
                 "\nmodule='" + module + '\'' +
                 "\nquestion='" + question + '\'' ;

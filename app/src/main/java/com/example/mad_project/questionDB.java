@@ -66,7 +66,7 @@ public class questionDB extends SQLiteOpenHelper {
 
         return result != -1;
     }*/
-
+    //Count the questions.
     public int countQuestion(){
         SQLiteDatabase db = getWritableDatabase();
         String Query = "SELECT * From "+TABLE_NAME;
@@ -81,6 +81,7 @@ public class questionDB extends SQLiteOpenHelper {
         return res1;
     }*/
 
+    //Get all questions.
     public List<Question> getAllData(){
         List<Question> ques2 = new ArrayList<>();
         String query = "SELECT* FROM "+TABLE_NAME ;
@@ -106,6 +107,13 @@ public class questionDB extends SQLiteOpenHelper {
         cursor.close();
         db2.close();
         return ques2;
+    }
+
+    //Delete questions.
+    public void deleteQuestions(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete(TABLE_NAME,col_1 +" =?",new String[]{String.valueOf(id)});
+        db.close();
     }
 
 
