@@ -5,9 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import androidx.annotation.Nullable;
-
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +23,6 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
     private static final String STARTED = "started";
     private static final String FINISHED = "finished";
 
-
-
     public FeedBackDbHandler(@Nullable Context context) {
         super(context, DB_NAME, null, VERSION);
     }
@@ -43,8 +39,6 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
                 +FINISHED+" TEXT" +
                 ");";
 
-
-
         db.execSQL(TABLE_CREATE_QUERY);
     }
 
@@ -58,8 +52,7 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
-    // Add a single todo
+    // Add a single feedback
     public void addFeedBack(FeedBack feedBack){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
 
@@ -76,7 +69,7 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
         sqLiteDatabase.close();
     }
 
-    // Count todo table records
+    // Count feedback table records
     public int countFeedBack(){
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM "+ TABLE_NAME;
@@ -85,7 +78,7 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
         return cursor.getCount();
     }
 
-    // Get all todos into a list
+    // Get all feedbacks into a list
     public List<FeedBack> getAllFeedBacks(){
 
         List<FeedBack> feedBacks = new ArrayList();
@@ -96,15 +89,14 @@ public class FeedBackDbHandler extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do {
-                // Create new ToDo object
+                // Create new feedback object
                 FeedBack feedBack = new FeedBack();
-                // mmgby6hh
+
                 feedBack.setId(cursor.getInt(0));
                 feedBack.setTitle(cursor.getString(1));
                 feedBack.setDescription(cursor.getString(2));
                 feedBack.setStarted(cursor.getLong(3));
                 feedBack.setFinished(cursor.getLong(4));
-
 
                 feedBacks.add(feedBack);
             }while (cursor.moveToNext());

@@ -44,7 +44,7 @@ public class FeedBackMainActivity extends AppCompatActivity {
 
         listView.setAdapter(adapter);
 
-        //get todo counts from the table
+        //get feedback counts from the table
         int countFeedBack = dbHandler.countFeedBack();
         count.setText("You have "+countFeedBack+" feedbacks");
 

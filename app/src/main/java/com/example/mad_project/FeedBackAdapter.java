@@ -40,8 +40,6 @@ public class FeedBackAdapter extends ArrayAdapter<FeedBack> {
         title.setText(feedBack.getTitle());
         description.setText(feedBack.getDescription());
 
-
-
         return row;
     }
 }
