@@ -9,9 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,10 +45,10 @@ public class Student_View_lessons extends AppCompatActivity {
                 builder.setTitle(adminModel.getLname());
                 builder.setMessage(adminModel.getLcontent());
 
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Got Any Questions?", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(Student_View_lessons.this, Admin_Lesson_java.class);
+                        Intent intent = new Intent(Student_View_lessons.this, AddQuestion.class);
                         startActivity(intent);
                     }
                 });
@@ -58,20 +56,12 @@ public class Student_View_lessons extends AppCompatActivity {
                 builder.setNegativeButton("View Lesson", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(Student_View_lessons.this, Admin_lesson_update.class);
+                        Intent intent = new Intent(Student_View_lessons.this, Student_open_lesson.class);
                         intent.putExtra("id",String.valueOf(adminModel.getId()));
                         startActivity(intent);
                     }
                 });
 
-                builder.setNeutralButton("Delete", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dataBaseHelper.deleteOne(adminModel);
-                        ShowLessonsOnListView(lv_studentLesson);
-                        Toast.makeText(Student_View_lessons.this, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
-                    }
-                });
                 builder.show();
             }
 
@@ -84,13 +74,13 @@ public class Student_View_lessons extends AppCompatActivity {
         lv_studentLesson.setAdapter(adminArrayAdapter);
     }
 
-    public void goAddLesson(View v) {
-        Intent i = new Intent(this, Admin_add_lesson.class);
+    public void goQuestion(View v) {
+        Intent i = new Intent(this, AddQuestion.class);
         startActivity(i);
     }
 
     public void back(View v) {
-        Intent i = new Intent(this, Admin_profile.class);
+        Intent i = new Intent(this, Student_View_lessons.class);
         startActivity(i);
     }
 }

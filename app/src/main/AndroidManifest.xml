@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Student_open_lesson"></activity>
         <activity android:name=".EditQuestion" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".ToDoMainActivity">
@@ -93,11 +93,11 @@
         <activity android:name=".Admin_lesson_PHP" />
         <activity android:name=".Admin_lesson_update" />
         <activity android:name=".Student_View_lessons">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>

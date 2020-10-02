@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin_add_lesson">
+    tools:context=".Admin_lesson_update">
 
     <TextView
         android:id="@+id/addLesson"

@@ -72,9 +72,4 @@ public class Admin_profile extends AppCompatActivity{
         startActivity(i);
     }
 
-    public void goNav(View v) {
-        Intent i = new Intent(this, Admin_nav.class);
-        startActivity(i);
-    }
-
 }

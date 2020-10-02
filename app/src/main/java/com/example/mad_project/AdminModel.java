@@ -21,9 +21,12 @@ public class AdminModel {
     @Override
     public String toString() {
         return "" +
-                "Lesson Name='" + lname + '\'' +
+                "\n"+
+                lname +
                 "\n" +
-                "\nContent='" + lcontent + '\'';
+                "\n" +
+                lcontent +
+                "\n";
     }
 
 
