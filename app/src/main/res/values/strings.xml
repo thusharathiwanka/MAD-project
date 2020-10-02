@@ -140,4 +140,6 @@
     <string name="AddFeedBack_btn">Add FeedBack</string>
     <string name="FeedbackTitleTXT">FeedbackTitle</string>
     <string name="Feedback_Description">FeedbackDescriptionTXT</string>
+    <string name="mailImg">mail</string>
+    <string name="body_txt" />
 </resources>
