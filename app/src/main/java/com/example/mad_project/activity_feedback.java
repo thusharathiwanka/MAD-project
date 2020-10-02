@@ -22,6 +22,13 @@ public class activity_feedback extends AppCompatActivity {
         btn2 = findViewById(R.id.back);
         mail = findViewById(R.id.gomail);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openContactFeedbackActivity();
+            }
+        });
+
 
         mail.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +47,12 @@ public class activity_feedback extends AppCompatActivity {
 
 
     }
+
+    private void openContactFeedbackActivity() {
+        Intent intent = new Intent(this, FeedBackMainActivity.class);
+        startActivity(intent);
+    }
+
     public void openContactMailActivity(){
         Intent intent = new Intent(this, activity_contact_via_gmail.class);
         startActivity(intent);
