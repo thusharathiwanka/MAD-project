@@ -35,9 +35,6 @@ public class Admin_add_lesson extends AppCompatActivity {
         TextView content = findViewById(R.id.content);
         content.setText("Content: ");
 
-        Button button12 = findViewById(R.id.button12);
-        button12.setText("Add Materials");
-
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,5 +58,10 @@ public class Admin_add_lesson extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void back(View v) {
+        Intent i = new Intent(this, Admin_Lesson_java.class);
+        startActivity(i);
     }
 }

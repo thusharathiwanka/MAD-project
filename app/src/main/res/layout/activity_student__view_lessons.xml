@@ -25,22 +25,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginBottom="35dp"
-        android:background="@drawable/admin_add_lessons"
-        android:onClick="goAddLesson"
-        android:textColor="#FFFFFF"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <ListView
-        android:id="@+id/lv_lessonDetails_j"
+        android:id="@+id/lv_studentLesson"
         android:layout_width="405dp"
         android:layout_height="424dp"
         android:layout_marginStart="1dp"
@@ -53,7 +39,6 @@
         android:dividerHeight="2sp"
         android:footerDividersEnabled="true"
         android:headerDividersEnabled="true"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Java"
@@ -87,7 +72,7 @@
         android:layout_marginEnd="177dp"
         android:layout_marginRight="177dp"
         android:layout_marginBottom="26dp"
-        android:text="Tap to Update or Delete"
+        android:text="Tap to View or Ask Questions"
         app:layout_constraintBottom_toTopOf="@+id/lv_lessonDetails_j"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

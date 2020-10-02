@@ -132,4 +132,14 @@
     <string name="Edit">Edit </string>
     <string name="lecturer_login">Lecturer login</string>
     <string name="are_you_a_lecturer">Are you a Lecturer ?</string>
+    <string name="NoOfFeedbacks">You added x FeedBacks</string>
+    <string name="AddaFeedBack">" Add FeedBack"</string>
+    <string name="HeadFeedback">Add a New FeedBack</string>
+    <string name="FeedbackTitle">Title</string>
+    <string name="FeedbackDescription">Description</string>
+    <string name="AddFeedBack_btn">Add FeedBack</string>
+    <string name="FeedbackTitleTXT">FeedbackTitle</string>
+    <string name="Feedback_Description">FeedbackDescriptionTXT</string>
+    <string name="mailImg">mail</string>
+    <string name="body_txt" />
 </resources>

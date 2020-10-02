@@ -30,7 +30,7 @@ public class activity_contact_via_gmail extends AppCompatActivity {
                 String main_message = maintxt.getText().toString();
                 String sub_message = subtxt.getText().toString();
                 i.setData(Uri.parse("mailto:"));
-                i.putExtra(i.EXTRA_EMAIL,new String[]{"someone@gmail.com"});
+                i.putExtra(i.EXTRA_EMAIL,new String[]{"codelearner@learn.com"});
                 i.putExtra(i.EXTRA_SUBJECT, main_message);
                 i.putExtra(i.EXTRA_TEXT,sub_message);
                 i.setType("text/plane");

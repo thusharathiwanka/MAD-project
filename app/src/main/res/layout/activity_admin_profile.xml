@@ -16,6 +16,7 @@
         android:fontFamily="@font/heading"
         android:text="Profile"
         android:textSize="18sp"
+        android:textColor="@color/darkBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +79,7 @@
         android:layout_marginBottom="257dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goStudent"
         android:text="view students"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,12 +95,34 @@
         android:layout_marginBottom="174dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goFeedback"
         android:text="view feedbacks"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/ViewQuestion"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="93dp"
+        android:background="@drawable/normal_button"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="goQuestion"
+        android:text="View Questions"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

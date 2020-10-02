@@ -37,9 +37,6 @@ public class Admin_lesson_update extends AppCompatActivity {
         TextView content = findViewById(R.id.content);
         content.setText("Content: ");
 
-        Button button12 = findViewById(R.id.button12);
-        button12.setText("Add Materials");
-
         final String id = getIntent().getStringExtra("id");
         AdminModel adminModel = dataBaseHelper.getSingleAdminModel(Integer.parseInt(id));
 
@@ -60,5 +57,10 @@ public class Admin_lesson_update extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void back(View v) {
+        Intent i = new Intent(this, Admin_Lesson_java.class);
+        startActivity(i);
     }
 }

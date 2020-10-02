@@ -91,4 +91,9 @@ public class Admin_Lesson_java extends AppCompatActivity {
         Intent i = new Intent(this, Admin_add_lesson.class);
         startActivity(i);
     }
+
+    public void back(View v) {
+        Intent i = new Intent(this, Admin_profile.class);
+        startActivity(i);
+    }
 }

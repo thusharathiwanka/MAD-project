@@ -46,4 +46,9 @@ public class Admin_lessons extends AppCompatActivity {
         Intent i = new Intent(this, Admin_lesson_PHP.class);
         startActivity(i);
     }
+
+    public void back(View v) {
+        Intent i = new Intent(this, Admin_profile.class);
+        startActivity(i);
+    }
 }
