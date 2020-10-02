@@ -6,7 +6,6 @@ public class ToDo {
     private long started, finished;
 
     public ToDo(){
-
     }
 
     public ToDo(int id, String title, String description, long started, long finished) {
@@ -27,7 +26,6 @@ public class ToDo {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -35,7 +33,6 @@ public class ToDo {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -43,7 +40,6 @@ public class ToDo {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -51,7 +47,6 @@ public class ToDo {
     public long getStarted() {
         return started;
     }
-
     public void setStarted(long started) {
         this.started = started;
     }
@@ -59,7 +54,6 @@ public class ToDo {
     public long getFinished() {
         return finished;
     }
-
     public void setFinished(long finished) {
         this.finished = finished;
     }

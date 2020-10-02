@@ -44,7 +44,6 @@ public class ToDoDbHandler extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE_QUERY);
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 

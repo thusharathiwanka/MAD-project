@@ -91,6 +91,9 @@ public class DisplayQuestionActivity extends AppCompatActivity {
                 builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(DisplayQuestionActivity.this,EditQuestion.class);
+                        intent.putExtra("ID",String.valueOf(question5.getId()));
+                        startActivity(intent);
 
                     }
                 });

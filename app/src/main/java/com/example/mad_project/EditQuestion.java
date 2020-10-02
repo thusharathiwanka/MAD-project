@@ -3,6 +3,7 @@ package com.example.mad_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,6 +21,8 @@ public class EditQuestion extends AppCompatActivity {
         editText5 = findViewById(R.id.module2);
         editText6 = findViewById(R.id.question2);
         button5 = findViewById(R.id.updateBtn);
+
+
 
     }
 }
