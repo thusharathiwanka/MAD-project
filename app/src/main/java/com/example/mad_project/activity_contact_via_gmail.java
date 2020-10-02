@@ -9,6 +9,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,12 +30,21 @@ public class activity_contact_via_gmail extends AppCompatActivity {
         btn1= findViewById(R.id.send);
 
         btn1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-                if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
 
+                if (TextUtils.isEmpty(maintxt.getText())) {
+
+                    maintxt.setError("Subject is required!");
+                }
+                else if(TextUtils.isEmpty(subtxt.getText())){
+                    subtxt.setError("Body paragraph is required!");
+                }
+                else {
+                    ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                    if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                        connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
 
                     Intent i = new Intent(Intent.ACTION_SEND);
                     String main_message = maintxt.getText().toString();
@@ -45,14 +55,14 @@ public class activity_contact_via_gmail extends AppCompatActivity {
                     i.putExtra(i.EXTRA_TEXT, sub_message);
                     i.setType("text/plane");
                     final Intent chooser = Intent.createChooser(i, "Send mail by this app");
-
                     startActivity(chooser);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "internet connection is not available", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
                 }
 
-            } });
+            } }});
 
         }
     }
