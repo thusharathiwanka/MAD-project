@@ -23,7 +23,7 @@ public class ToDoAdapter extends ArrayAdapter<ToDo> {
     private int resource;
     List<ToDo> todos;
 
-    ToDoAdapter(Context context, int resource, List<ToDo> todos){
+   public ToDoAdapter(Context context, int resource, List<ToDo> todos){
         super(context,resource,todos);
         this.context = context;
         this.resource = resource;
@@ -40,8 +40,6 @@ public class ToDoAdapter extends ArrayAdapter<ToDo> {
         TextView description = row.findViewById(R.id.description);
         ImageView imageView = row.findViewById(R.id.onGoing);
 
-
-        // todos [obj1,obj2,obj3]
         ToDo toDo = todos.get(position);
         title.setText(toDo.getTitle());
         description.setText(toDo.getDescription());
