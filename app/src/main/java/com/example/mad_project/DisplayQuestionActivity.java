@@ -69,7 +69,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
                 //builder.show();
 
                 //Cancel
-                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                builder.setPositiveButton("Cancel",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent intent = new Intent(DisplayQuestionActivity.this,DisplayQuestionActivity.class);
@@ -83,7 +83,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dbhandler.deleteQuestions(question5.getId());
                         startActivity(new Intent(DisplayQuestionActivity.this,DisplayQuestionActivity.class));
-                        Toast.makeText(DisplayQuestionActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DisplayQuestionActivity.this,"Question Deleted.",Toast.LENGTH_LONG).show();
                     }
                 });
 
