@@ -99,6 +99,7 @@
             <category android:name="android.intent.category.DEFAULT" />
         </intent-filter>
         </activity>
+        <activity android:name=".Student_open_lesson"/>
         <activity android:name=".AdminStudentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
