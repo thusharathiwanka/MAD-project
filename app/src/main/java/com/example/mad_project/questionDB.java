@@ -116,7 +116,7 @@ public class questionDB extends SQLiteOpenHelper {
         db.close();
     }
 
-    //Get a single Question
+    //Get a single Question to edit question.
     public Question getSingleQuestion(int id){
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor2 = db.query(TABLE_NAME,new String[]{col_1,col_2,col_3,col_4},col_1 + "= ?",new String[]{String.valueOf(id)},null,null,null);
@@ -134,7 +134,7 @@ public class questionDB extends SQLiteOpenHelper {
         return null;
     }
 
-    //Update a single Question
+    //Update a single Question to edit question.
     public int updateQuestion(Question question){
         SQLiteDatabase db = getWritableDatabase();
 
@@ -149,6 +149,13 @@ public class questionDB extends SQLiteOpenHelper {
         return  status;
 
     }
+
+
+
+
+
+    //Update a single Question to reply question.
+
 
 
  }

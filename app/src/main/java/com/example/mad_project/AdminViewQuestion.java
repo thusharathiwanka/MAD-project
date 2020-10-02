@@ -87,7 +87,9 @@ public class AdminViewQuestion extends AppCompatActivity {
                 builder2.setNeutralButton("Reply", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        Intent intent = new Intent(AdminViewQuestion.this,ReplyQuestionActivity.class);
+                        intent.putExtra("ID",String.valueOf(question6.getId()));
+                        startActivity(intent);
                     }
                 });
                 builder2.show();
