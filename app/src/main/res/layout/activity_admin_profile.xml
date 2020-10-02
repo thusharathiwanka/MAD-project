@@ -7,6 +7,24 @@
     tools:context=".Admin_profile">
 
 
+    <ImageView
+        android:id="@+id/menuBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:layout_marginBottom="247dp"
+        android:contentDescription="@string/menu"
+        android:onClick="goNav"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toStartOf="@+id/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu" />
+
     <TextView
         android:id="@+id/profile"
         android:layout_width="wrap_content"
@@ -78,6 +96,7 @@
         android:layout_marginBottom="257dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goStudent"
         android:text="view students"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,12 +112,34 @@
         android:layout_marginBottom="174dp"
         android:background="@drawable/normal_button"
         android:fontFamily="sans-serif-medium"
+        android:onClick="goFeedback"
         android:text="view feedbacks"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/ViewQuestion"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
+        android:layout_marginBottom="93dp"
+        android:background="@drawable/normal_button"
+        android:fontFamily="sans-serif-medium"
+        android:onClick="goQuestion"
+        android:text="View Questions"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

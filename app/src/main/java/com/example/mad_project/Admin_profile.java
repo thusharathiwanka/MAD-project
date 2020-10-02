@@ -53,7 +53,27 @@ public class Admin_profile extends AppCompatActivity{
     }
 
     public void goLesson(View v) {
-        Intent i = new Intent(this, Admin_lessons.class);
+        Intent i = new Intent(this, Admin_Lesson_java.class);
+        startActivity(i);
+    }
+
+    public void goFeedback(View v) {
+        Intent i = new Intent(this, activity_feedback.class);
+        startActivity(i);
+    }
+
+    public void goStudent(View v) {
+        Intent i = new Intent(this, AdminStudentsActivity.class);
+        startActivity(i);
+    }
+
+    public void goQuestion(View v) {
+        Intent i = new Intent(this, AdminViewQuestion.class);
+        startActivity(i);
+    }
+
+    public void goNav(View v) {
+        Intent i = new Intent(this, Admin_nav.class);
         startActivity(i);
     }
 

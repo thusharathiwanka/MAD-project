@@ -22,6 +22,7 @@ public class AdminModel {
     public String toString() {
         return "" +
                 "Lesson Name='" + lname + '\'' +
+                "\n" +
                 "\nContent='" + lcontent + '\'';
     }
 
