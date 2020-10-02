@@ -25,11 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="24dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/NoOfFeedbacks"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/add"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/add"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -39,9 +39,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="13dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/AddaFeedBack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/feedbackcount" />
+        app:layout_constraintStart_toEndOf="@+id/feedbackcount"
+        android:textAllCaps="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -132,7 +132,7 @@
     <string name="Edit">Edit </string>
     <string name="lecturer_login">Lecturer login</string>
     <string name="are_you_a_lecturer">Are you a Lecturer ?</string>
-    <string name="NoOfFeedbacks">You have x FeedBacks</string>
+    <string name="NoOfFeedbacks">You added x FeedBacks</string>
     <string name="AddaFeedBack">" Add FeedBack"</string>
     <string name="HeadFeedback">Add a New FeedBack</string>
     <string name="FeedbackTitle">Title</string>
