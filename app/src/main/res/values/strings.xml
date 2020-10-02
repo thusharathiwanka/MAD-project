@@ -130,4 +130,6 @@
     <string name="DisplayDescription">Description</string>
     <string name="TODOdone">done</string>
     <string name="Edit">Edit </string>
+    <string name="lecturer_login">Lecturer login</string>
+    <string name="are_you_a_lecturer">Are you a Lecturer ?</string>
 </resources>
