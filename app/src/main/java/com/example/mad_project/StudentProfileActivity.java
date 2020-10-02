@@ -21,7 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import es.dmoral.toasty.Toasty;
 
-public class StudentProfileActivity extends AppCompatActivity {
+public class   StudentProfileActivity extends AppCompatActivity {
     Button editProfileBtn;
     ImageView menuBtn;
     NavigationView navigationView;

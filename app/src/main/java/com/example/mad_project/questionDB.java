@@ -116,5 +116,23 @@ public class questionDB extends SQLiteOpenHelper {
         db.close();
     }
 
+    //Get a single Question
+    public Question getSingleQuestion(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor2 = db.query(TABLE_NAME,new String[]{col_1,col_2,col_3,col_4},col_1 + "= ?",new String[]{String.valueOf(id)},null,null,null);
+        Question question;
+        if(cursor2 != null){
+            cursor2.moveToFirst();
+            question = new Question(
+                    cursor2.getInt(0),
+                    cursor2.getString(1),
+                    cursor2.getString(2),
+                    cursor2.getString(3)
+            );
+            return question;
+        }
+        return null;
+    }
+
 
  }
