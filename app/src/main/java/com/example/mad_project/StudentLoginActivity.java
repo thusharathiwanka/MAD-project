@@ -28,16 +28,17 @@ public class StudentLoginActivity extends AppCompatActivity {
 
         backBtn = findViewById(R.id.back);
         adminLogin = findViewById(R.id.adminLogin);
-        forgetPassword = findViewById(R.id.forgetPassword);
+        forgetPassword = findViewById(R.id.forget);
         loginBtn = findViewById(R.id.loginBtn);
         usernameInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
         final DBHelperProfile loginDB = new DBHelperProfile(this);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        forgetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -45,14 +46,6 @@ public class StudentLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AdminLoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        forgetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ForgetPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -65,7 +58,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
                 if(username.length() <= 0 || password.length() <= 0) {
                     Toasty.error(getApplicationContext(), "Please fill all the fields", Toasty.LENGTH_SHORT).show();
-                }else {
+                } else {
                     boolean isValidUsername = StudentRegisterActivity.usernameValidate(username);
 
                     if(isValidUsername) {
@@ -83,6 +76,14 @@ public class StudentLoginActivity extends AppCompatActivity {
                         Toasty.error(getApplicationContext(), "Enter a valid username", Toasty.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }

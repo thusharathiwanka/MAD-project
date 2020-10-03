@@ -107,7 +107,7 @@
         android:text="@string/forget_your_password"
         android:textColor="@color/grey"
         android:textSize="16sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/forgetPassword"
+        app:layout_constraintBaseline_toBaselineOf="@+id/forget"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
@@ -144,23 +144,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.963" />
 
-    <TextView
-        android:id="@+id/forgetPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:fontFamily="@font/medium"
-        android:text="@string/reset_now"
-        android:textColor="@color/lightBlue"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
-
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -176,4 +159,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_now"
+        android:fontFamily="@font/medium"
+        android:textColor="@color/lightBlue"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput"
+        app:layout_constraintVertical_bias="0.042" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,7 +17,8 @@ import es.dmoral.toasty.Toasty;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
     EditText email;
-    Button submitBtn, backBtn;
+    Button submitBtn;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +55,8 @@ public class ForgetPasswordActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
+                startActivity(intent);
             }
         });
     }
