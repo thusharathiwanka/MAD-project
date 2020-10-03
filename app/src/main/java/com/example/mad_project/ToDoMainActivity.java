@@ -92,7 +92,7 @@ public class ToDoMainActivity extends AppCompatActivity {
     }
 
     public void Gomain(View view){
-        Intent intent = new Intent(this, SelectFavouritesActivity.class);
+        Intent intent = new Intent(this, Student_View_lessons.class);
         startActivity(intent);
     }
 }
