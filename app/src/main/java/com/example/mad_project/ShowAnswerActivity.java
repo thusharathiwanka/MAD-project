@@ -3,12 +3,15 @@ package com.example.mad_project;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +52,28 @@ public class ShowAnswerActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ShowAnswerActivity.this);
                 builder.setTitle(question2.getQuestion());
                 builder.setMessage(question2.getAnswer());
+                //builder.show();
+
+                builder.setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(ShowAnswerActivity.this,ShowAnswerActivity.class));
+                    }
+                });
+                builder.setNegativeButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dbhandler.deleteQuestions(question2.getId());
+                        startActivity(new Intent(ShowAnswerActivity.this,ShowAnswerActivity.class));
+                        Toast.makeText(ShowAnswerActivity.this,"Question Deleted.",Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
                 builder.show();
 
             }
