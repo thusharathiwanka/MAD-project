@@ -16,7 +16,7 @@ import es.dmoral.toasty.Toasty;
 
 public class ForgetPasswordActivity extends AppCompatActivity {
     EditText email;
-    Button submitBtn;
+    Button submitBtn, backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
         email = findViewById(R.id.emailInputForget);
         submitBtn = findViewById(R.id.submitBtn);
+        backBtn = findViewById(R.id.back);
         final DBHelperProfile dbHelper = new DBHelperProfile(this);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
@@ -48,12 +49,20 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private String shuffleCharacters(String characters) {
         List<String> letters = Arrays.asList(characters.split(""));
         Collections.shuffle(letters);
         String shuffled = "";
+        
         for (String letter : letters) {
             shuffled += letter;
         }

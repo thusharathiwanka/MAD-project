@@ -16,7 +16,7 @@ import static android.provider.Contacts.SettingsColumns.KEY;
 
 public class questionDB extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "codeLearnerDB.db";
+    public static final String DATABASE_NAME = "CodeLearnerDB.db";
     public static final String TABLE_NAME = "question_table";
     public static final String col_1 = "ID";
     public static final String col_2 = "Email";

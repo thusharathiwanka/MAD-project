@@ -18,6 +18,7 @@ public class DBHelperProfile extends SQLiteOpenHelper {
 
 
     private static final String TABLE_NAME = "todo";
+    private static final String TABLE_NAME2 = "feedbacks";
 
     // Column names
     private static final String ID = "id";
@@ -35,11 +36,11 @@ public class DBHelperProfile extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS students (student_id INTEGER PRIMARY KEY AUTOINCREMENT, student_email TEXT, student_username TEXT, student_password TEXT, student_favourites TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS admins (admin_id INTEGER PRIMARY KEY AUTOINCREMENT, admin_name TEXT, admin_email TEXT, admin_username TEXT, admin_password TEXT, admin_subjects TEXT)");
-       /* String createTableStatment = "CREATE TABLE " + ADD_LESSONS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LESSON_NAME + " TEXT, " + COLUMN_CONTENT + " TEXT)";
+        /*String createTableStatment = "CREATE TABLE " + ADD_LESSONS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LESSON_NAME + " TEXT, " + COLUMN_CONTENT + " TEXT)";
         sqLiteDatabase.execSQL(createTableStatment);
         sqLiteDatabase.execSQL("create table question_table (ID INTEGER PRIMARY KEY AUTOINCREMENT,Email VARCHAR(255),Module TEXT,Question TEXT,Answer TEXT)");
 
-        String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" " +
+        String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME2+" " +
                 "("
                 +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
                 +TITLE + " TEXT,"
@@ -48,7 +49,18 @@ public class DBHelperProfile extends SQLiteOpenHelper {
                 +FINISHED+" TEXT" +
                 ");";
 
-        sqLiteDatabase.execSQL(TABLE_CREATE_QUERY); */
+        sqLiteDatabase.execSQL(TABLE_CREATE_QUERY);
+
+        String TABLE_CREATE_QUERY2 = "CREATE TABLE "+TABLE_NAME+" " +
+                "("
+                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                +TITLE + " TEXT,"
+                +DESCRIPTION + " TEXT,"
+                +STARTED+ " TEXT,"
+                +FINISHED+" TEXT" +
+                ");";
+
+        sqLiteDatabase.execSQL(TABLE_CREATE_QUERY2); */
     }
 
     @Override
