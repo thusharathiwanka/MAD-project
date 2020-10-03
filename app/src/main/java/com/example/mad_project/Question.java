@@ -32,10 +32,10 @@ public class Question {
     @Override
     public String toString() {
         return "" +
-                "\nid=" + id +
-                "\nemail='" + email + '\'' +
-                "\nmodule='" + module + '\'' +
-                "\nquestion='" + question + '\'';
+                "\nId=" + id +
+                "\nEmail='" + email + '\'' +
+                "\nModule='" + module + '\'' +
+                "\nQuestion='" + question + '\'';
 
 
 
@@ -51,13 +51,13 @@ public class Question {
                 '}';
     }*/
 
-    public String display(){
+   /* public String display(){
         return "" +
                 "\nemail='" + email + '\'' +
                 "\nmodule='" + module + '\'' +
                 "\nquestion='" + question + '\''+
                 "\nanswer='"+ answer +'\'';
-    }
+    }*/
 
     public int getId() {
         return id;

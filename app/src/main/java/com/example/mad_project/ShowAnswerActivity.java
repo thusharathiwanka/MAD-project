@@ -1,8 +1,11 @@
 package com.example.mad_project;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -37,6 +40,19 @@ public class ShowAnswerActivity extends AppCompatActivity {
 
 
         showAnswersOnListView(listview3);
+
+        listview3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int possition, long l) {
+                final Question2 question2 = list3.get(possition);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(ShowAnswerActivity.this);
+                builder.setTitle(question2.getQuestion());
+                builder.setMessage(question2.getAnswer());
+                builder.show();
+
+            }
+        });
     }
 
     public void showAnswersOnListView(ListView listView2){

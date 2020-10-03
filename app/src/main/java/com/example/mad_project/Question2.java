@@ -15,10 +15,10 @@ public class Question2 {
     @Override
     public String toString() {
         return "" +
-                "\nemail='" + email + '\'' +
-                "\nmodule='" + module + '\'' +
-                "\nquestion='" + question + '\'' +
-                "\nanswer='" + answer + '\'' ;
+                "\nEmail='" + email + '\'' +
+                "\nModule='" + module + '\'' +
+                "\nQuestion='" + question + '\'' +
+                "\nAnswer='" + answer + '\'' ;
     }
 
     public int getId() {

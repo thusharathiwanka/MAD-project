@@ -96,9 +96,9 @@ public class questionDB extends SQLiteOpenHelper {
                 String Email = cursor.getString(1);
                 String Module = cursor.getString(2);
                 String Question = cursor.getString(3);
-                String Answer = cursor.getString(4);
+                //String Answer = cursor.getString(4);
 
-                Question ques1 = new Question(ID,Email,Module,Question,Answer);
+                Question ques1 = new Question(ID,Email,Module,Question);
                 ques2.add(ques1);
 
             }while(cursor.moveToNext());
