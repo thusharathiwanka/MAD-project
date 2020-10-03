@@ -51,15 +51,21 @@ public class AdminLoginActivity extends AppCompatActivity {
                 if(username.length() <= 0 || password.length() <= 0) {
                     Toasty.error(getApplicationContext(), "Please fill all the fields", Toasty.LENGTH_SHORT).show();
                 }else {
-                    boolean loginAdmin = loginDB.adminLoginCheck(username, password);
+                    boolean isValidUsername = StudentRegisterActivity.usernameValidate(username);
 
-                    if (loginAdmin) {
-                        Intent intent = new Intent(getApplicationContext(), Admin_profile.class);
-                        intent.putExtra("USERNAME", username);
-                        startActivity(intent);
-                        Toasty.success(getApplicationContext(), "Welcome back " + username, Toasty.LENGTH_SHORT).show();
+                    if(isValidUsername) {
+                        boolean loginAdmin = loginDB.adminLoginCheck(username, password);
+
+                        if (loginAdmin) {
+                            Intent intent = new Intent(getApplicationContext(), Admin_profile.class);
+                            intent.putExtra("USERNAME", username);
+                            startActivity(intent);
+                            Toasty.success(getApplicationContext(), "Welcome back " + username, Toasty.LENGTH_SHORT).show();
+                        } else {
+                            Toasty.error(getApplicationContext(), "Your username or password is invalid", Toasty.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toasty.error(getApplicationContext(), "Your username or password is invalid", Toasty.LENGTH_SHORT).show();
+                        Toasty.error(getApplicationContext(), "Enter a valid username", Toasty.LENGTH_SHORT).show();
                     }
                 }
             }

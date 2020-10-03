@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import es.dmoral.toasty.Toasty;
 
 public class StudentRegisterActivity extends AppCompatActivity {
@@ -38,19 +41,31 @@ public class StudentRegisterActivity extends AppCompatActivity {
                 if(email.length() <= 0 || username.length() <= 0 || password.length() <= 0) {
                     Toasty.error(getApplicationContext(), "Please fill all the fields", Toasty.LENGTH_SHORT).show();
                 }else {
-                    boolean checkEmail = registerDB.checkEmail(email);
-                    boolean checkUsername = registerDB.checkUsername(username);
+                    boolean isValidEmail  = emailValidate(email);
 
-                    if(checkEmail) {
-                        Toasty.error(getApplicationContext(), "This email is already registered", Toasty.LENGTH_SHORT).show();
-                    } else if(checkUsername) {
-                        Toasty.error(getApplicationContext(), "This username is already taken", Toasty.LENGTH_SHORT).show();
+                    if(isValidEmail) {
+                        boolean isValidUsername = usernameValidate(username);
+
+                        if(isValidUsername) {
+                            boolean checkEmail = registerDB.checkEmail(email);
+                            boolean checkUsername = registerDB.checkUsername(username);
+
+                            if(checkEmail) {
+                                Toasty.error(getApplicationContext(), "This email is already registered", Toasty.LENGTH_SHORT).show();
+                            } else if(checkUsername) {
+                                Toasty.error(getApplicationContext(), "This username is already taken", Toasty.LENGTH_SHORT).show();
+                            } else {
+                                Intent intent = new Intent(getApplicationContext(), SelectFavouritesActivity.class);
+                                intent.putExtra("STUDENT_EMAIL", email);
+                                intent.putExtra("STUDENT_USERNAME", username);
+                                intent.putExtra("STUDENT_PASSWORD", password);
+                                startActivity(intent);
+                            }
+                        } else {
+                            Toasty.error(getApplicationContext(), "Enter a valid username", Toasty.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Intent intent = new Intent(getApplicationContext(), SelectFavouritesActivity.class);
-                        intent.putExtra("STUDENT_EMAIL", email);
-                        intent.putExtra("STUDENT_USERNAME", username);
-                        intent.putExtra("STUDENT_PASSWORD", password);
-                        startActivity(intent);
+                        Toasty.error(getApplicationContext(), "Enter a valid email", Toasty.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -62,5 +77,21 @@ public class StudentRegisterActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public static boolean emailValidate(String email) {
+        String emailRegex = "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$";
+        Pattern emailPattern = Pattern.compile(emailRegex, Pattern.CASE_INSENSITIVE);
+        Matcher emailMatcher = emailPattern.matcher(email);
+
+        return emailMatcher.find();
+    }
+
+    public static boolean usernameValidate(String username) {
+        String usernameRegex = "^[aA-zZ]\\w{5,29}$";
+        Pattern usernamePattern = Pattern.compile(usernameRegex);
+        Matcher usernameMatcher = usernamePattern.matcher(username);
+
+        return usernameMatcher.matches();
     }
 }

@@ -10,6 +10,22 @@ import java.util.ArrayList;
 
 public class DBHelperProfile extends SQLiteOpenHelper {
     public static final String DBNAME = "CodeLearnerDB.db";
+    /*
+    public static final String ADD_LESSONS = "ADD_LESSONS";
+    public static final String COLUMN_LESSON_NAME = "LESSON_NAME";
+    public static final String COLUMN_CONTENT = "CONTENT";
+    public static final String COLUMN_ID = "ID";
+
+
+    private static final String TABLE_NAME = "todo";
+
+    // Column names
+    private static final String ID = "id";
+    private static final String TITLE = "title";
+    private static final String DESCRIPTION = "description";
+    private static final String STARTED = "started";
+    private static final String FINISHED = "finished";
+    */
 
     public DBHelperProfile(Context context) {
         super(context, DBNAME, null, 1);
@@ -19,12 +35,28 @@ public class DBHelperProfile extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS students (student_id INTEGER PRIMARY KEY AUTOINCREMENT, student_email TEXT, student_username TEXT, student_password TEXT, student_favourites TEXT)");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS admins (admin_id INTEGER PRIMARY KEY AUTOINCREMENT, admin_name TEXT, admin_email TEXT, admin_username TEXT, admin_password TEXT, admin_subjects TEXT)");
+       /* String createTableStatment = "CREATE TABLE " + ADD_LESSONS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LESSON_NAME + " TEXT, " + COLUMN_CONTENT + " TEXT)";
+        sqLiteDatabase.execSQL(createTableStatment);
+        sqLiteDatabase.execSQL("create table question_table (ID INTEGER PRIMARY KEY AUTOINCREMENT,Email VARCHAR(255),Module TEXT,Question TEXT,Answer TEXT)");
+
+        String TABLE_CREATE_QUERY = "CREATE TABLE "+TABLE_NAME+" " +
+                "("
+                +ID+" INTEGER PRIMARY KEY AUTOINCREMENT,"
+                +TITLE + " TEXT,"
+                +DESCRIPTION + " TEXT,"
+                +STARTED+ " TEXT,"
+                +FINISHED+" TEXT" +
+                ");";
+
+        sqLiteDatabase.execSQL(TABLE_CREATE_QUERY); */
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS students");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS admins");
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS question_table");
+        onCreate(sqLiteDatabase);
     }
 
     public boolean checkEmail(String email) {
