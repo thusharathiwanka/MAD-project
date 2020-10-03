@@ -3,7 +3,9 @@ package com.example.mad_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -37,6 +39,20 @@ public class ReplyQuestionActivity extends AppCompatActivity {
         editText9.setText(question1.getQuestion());
 
         //System.out.println(id);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String setEmail2 = editText7.getText().toString();
+                String setModule2 = editText8.getText().toString();
+                String setQuestion2 = editText9.getText().toString();
+                String setAnswer = editText10.getText().toString();
+
+                //create model class object
+                Question question = new Question(Integer.parseInt(id),setEmail2,setModule2,setQuestion2,setAnswer);
+                int state = dbhandler.setAnswer(question);
+                startActivity(new Intent(context,ShowAnswerActivity.class));
+            }
+        });
 
     }
 }

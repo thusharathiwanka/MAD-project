@@ -146,15 +146,27 @@ public class questionDB extends SQLiteOpenHelper {
         int status = db.update(TABLE_NAME,contentValues,col_1 +" =?",new String[]{String.valueOf(question.getId())});
 
         db.close();
-        return  status;
+        return status;
 
     }
 
+    //Set Answer
+    public int setAnswer(Question question){
+        SQLiteDatabase db = getWritableDatabase();
 
+        ContentValues contentValues = new ContentValues();
 
+        contentValues.put(col_2,question.getEmail());
+        contentValues.put(col_3,question.getModule());
+        contentValues.put(col_4,question.getQuestion());
+        contentValues.put(col_5,question.getAnswer());
 
+        int status = db.update(TABLE_NAME,contentValues,col_1 +" =?",new String[]{String.valueOf(question.getId())});
 
-    //Update a single Question to reply question.
+        db.close();
+        return status;
+
+    }
 
 
 

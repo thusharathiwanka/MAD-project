@@ -2,7 +2,7 @@ package com.example.mad_project;
 
 public class Question {
     private int id;
-    private String email,module,question;
+    private String email,module,question,answer;
 
     public Question(){
 
@@ -19,6 +19,14 @@ public class Question {
         this.email = email;
         this.module = module;
         this.question = question;
+    }
+
+    public Question(int id, String email, String module, String question, String answer) {
+        this.id = id;
+        this.email = email;
+        this.module = module;
+        this.question = question;
+        this.answer = answer;
     }
 
     @Override
@@ -60,5 +68,13 @@ public class Question {
 
     public void setQuestion(String question) {
         this.question = question;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }
