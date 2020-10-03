@@ -14,8 +14,14 @@
             android:id="@+id/nav_ask_question"
             android:title="@string/ask_question" />
         <item
+            android:id="@+id/nav_my_todos"
+            android:title="@string/my_todos" />
+        <item
             android:id="@+id/nav_about"
             android:title="@string/about_service" />
+        <item
+            android:id="@+id/nav_contact"
+            android:title="@string/contact_us" />
         <item
             android:id="@+id/nav_feedback"
             android:title="@string/feedback" />

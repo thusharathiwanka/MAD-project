@@ -64,13 +64,17 @@ public class   StudentProfileActivity extends AppCompatActivity {
                 int id = item.getItemId();
 
                 if(id == R.id.nav_learning) {
-//            startActivity(new Intent(getApplicationContext(), ));
+                    startActivity(new Intent(getApplicationContext(), Student_View_lessons.class));
                 } else if (id == R.id.nav_ask_question) {
                     startActivity(new Intent(getApplicationContext(), AddQuestion.class));
                 } else if (id == R.id.nav_about) {
                     startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 } else if (id == R.id.nav_feedback) {
                     startActivity(new Intent(getApplicationContext(), activity_feedback.class));
+                } else if (id == R.id.nav_my_todos) {
+                    startActivity(new Intent(getApplicationContext(), ToDoMainActivity.class));
+                } else if(id == R.id.nav_contact) {
+                    startActivity(new Intent(getApplicationContext(), activity_contact_via_gmail.class));
                 } else if (id == R.id.nav_log_out) {
                     alert.setMessage("Are you sure you want to logout ?");
                     alert.setCancelable(false);
