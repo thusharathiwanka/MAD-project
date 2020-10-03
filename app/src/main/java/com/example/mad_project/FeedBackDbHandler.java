@@ -13,7 +13,7 @@ import java.util.List;
 public class FeedBackDbHandler extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
-    private static final String DB_NAME = "feedback.db";
+    private static final String DB_NAME = "CodeLearnerDB.db";
     private static final String TABLE_NAME = "feedbacks";
 
     // Column names
