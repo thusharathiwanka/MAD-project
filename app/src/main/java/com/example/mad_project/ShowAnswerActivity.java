@@ -71,7 +71,9 @@ public class ShowAnswerActivity extends AppCompatActivity {
                 builder.setNeutralButton("Update", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-
+                        Intent intent = new Intent(ShowAnswerActivity.this,editAnswer.class);
+                        intent.putExtra("id",String.valueOf(question2.getId()));
+                        startActivity(intent);
                     }
                 });
                 builder.show();

@@ -196,5 +196,26 @@ public class questionDB extends SQLiteOpenHelper {
         return returnList;
     }
 
+    //Get a single answer to edit.
+    public Question2 getSingleAnswer(int id1){
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.query(TABLE_NAME,new String[]{col_1,col_2,col_3,col_4,col_5},col_1 + "= ?",new String[]{String.valueOf(id1)},null,null,null);
+        Question2 question;
+        if(cursor != null){
+            cursor.moveToFirst();
+            question = new Question2(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4)
+            );
+            return question;
+        }
+        return null;
+
+    }
+
+
 
  }
