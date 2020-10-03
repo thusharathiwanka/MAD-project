@@ -53,15 +53,21 @@ public class EditStudentActivity extends AppCompatActivity {
                 String passwordUpdate = passwordEdit.getText().toString();
                 String favouritesUpdate = favouriteEdit.getText().toString();
 
-                boolean isUpdated =  updateDB.updateStudent(username, emailUpdate, usernameUpdate, passwordUpdate, favouritesUpdate);
+                boolean isEmailValid = StudentRegisterActivity.emailValidate(emailUpdate);
 
-                if(isUpdated) {
-                    Toasty.success(getApplicationContext(), "Your details has been updated successfully", Toasty.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), StudentProfileActivity.class);
-                    intent.putExtra("USERNAME", username);
-                    startActivity(intent);
+                if(isEmailValid) {
+                    boolean isUpdated =  updateDB.updateStudent(username, emailUpdate, usernameUpdate, passwordUpdate, favouritesUpdate);
+
+                    if(isUpdated) {
+                        Toasty.success(getApplicationContext(), "Your details has been updated successfully", Toasty.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), StudentProfileActivity.class);
+                        intent.putExtra("USERNAME", username);
+                        startActivity(intent);
+                    } else {
+                        Toasty.error(getApplicationContext(), "Something went wrong when updating your details", Toasty.LENGTH_SHORT).show();
+                    }
                 } else {
-                    Toasty.error(getApplicationContext(), "Something went wrong when updating your details", Toasty.LENGTH_SHORT).show();
+                    Toasty.error(getApplicationContext(), "Enter a valid email", Toasty.LENGTH_SHORT).show();
                 }
             }
         });
