@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".userShowAnswers">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +30,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+=======
+        <activity android:name=".Admin_FeedBackMainActivity"></activity>
+>>>>>>> 3626fc418e19ae2781bb451de511af62dcf7b5e0
         <activity android:name=".EditQuestion" />
         <activity android:name=".ForgetPasswordActivity" />
         <activity android:name=".ToDoMainActivity">

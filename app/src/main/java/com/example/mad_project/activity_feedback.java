@@ -45,7 +45,6 @@ public class activity_feedback extends AppCompatActivity {
             }
         });
 
-
     }
 
     private void openContactFeedbackActivity() {

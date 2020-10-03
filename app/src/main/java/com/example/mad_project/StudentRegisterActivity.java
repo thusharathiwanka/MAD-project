@@ -62,7 +62,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         } else {
-                            Toasty.error(getApplicationContext(), "Enter a valid username", Toasty.LENGTH_SHORT).show();
+                            Toasty.error(getApplicationContext(), "Enter a valid username. Username should contain characters and numbers", Toasty.LENGTH_SHORT).show();
                         }
                     } else {
                         Toasty.error(getApplicationContext(), "Enter a valid email", Toasty.LENGTH_SHORT).show();
