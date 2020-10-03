@@ -22,7 +22,7 @@ public class questionDB extends SQLiteOpenHelper {
     public static final String col_2 = "Email";
     public static final String col_3 = "Module";
     public static  final String col_4 = "Question";
-    public  static  final String col_5 = "Answer";
+    public static  final String col_5 = "Answer";
 
     public questionDB(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);

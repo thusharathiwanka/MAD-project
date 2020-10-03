@@ -35,6 +35,8 @@
         <activity android:name=".AddToDo" />
         <activity android:name=".activity_contact_via_gmail" />
         <activity android:name=".activity_feedback" />
+        <activity android:name=".FeedBackMainActivity" />
+        <activity android:name=".AddFeedBack" />
         <activity
             android:name=".StudentDrawerActivity"
             android:label="@string/title_activity_student_drawer"
