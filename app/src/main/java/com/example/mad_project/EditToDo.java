@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,14 +39,19 @@ public class EditToDo extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String titleText = title.getText().toString();
-                String decText = description.getText().toString();
-                updateDate = System.currentTimeMillis();
+                if (TextUtils.isEmpty(title.getText())) {
 
-                ToDo toDo = new ToDo(Integer.parseInt(id),titleText,decText,updateDate,0);
-                int state = dbHandler.updateSingleToDo(toDo);
-                System.out.println(state);
-                startActivity(new Intent(context,ToDoMainActivity.class));
+                    title.setError("Title is required!");
+                } else {
+                    String titleText = title.getText().toString();
+                    String decText = description.getText().toString();
+                    updateDate = System.currentTimeMillis();
+
+                    ToDo toDo = new ToDo(Integer.parseInt(id), titleText, decText, updateDate, 0);
+                    int state = dbHandler.updateSingleToDo(toDo);
+                    System.out.println(state);
+                    startActivity(new Intent(context, ToDoMainActivity.class));
+                }
             }
         });
     }

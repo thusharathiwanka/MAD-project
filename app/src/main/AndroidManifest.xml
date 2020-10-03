@@ -28,15 +28,23 @@
         <activity
             android:name=".ToDoAdapter"
             tools:ignore="Instantiatable" />
+        <activity android:name=".AddFeedBack"/>
+        <activity android:name=".FeedBackMainActivity"/>
+        <activity android:name=".FeedBackDbHandler"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".ToDo"
             tools:ignore="Instantiatable" />
         <activity android:name=".EditToDo" />
         <activity android:name=".AddToDo" />
         <activity android:name=".activity_contact_via_gmail" />
-        <activity android:name=".activity_feedback" />
-        <activity android:name=".FeedBackMainActivity" />
-        <activity android:name=".AddFeedBack" />
+        <activity android:name=".activity_feedback" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".StudentDrawerActivity"
             android:label="@string/title_activity_student_drawer"

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,15 +35,25 @@ public class AddFeedBack extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userTitle = title.getText().toString();
-                String userDesc = desc.getText().toString();
-                long started = System.currentTimeMillis();
+                if (TextUtils.isEmpty(title.getText())) {
 
-                FeedBack feedBack = new FeedBack(userTitle,userDesc,started,0);
-                dbHandler.addFeedBack(feedBack);
+                    title.setError("Title is required!");
+                }
+                else if(TextUtils.isEmpty(desc.getText())){
+                    desc.setError("Description is required!");
+                }
+                else {
+                    String userTitle = title.getText().toString();
+                    String userDesc = desc.getText().toString();
+                    long started = System.currentTimeMillis();
 
-                startActivity(new Intent(context,FeedBackMainActivity.class));
+                    FeedBack feedBack = new FeedBack(userTitle, userDesc, started, 0);
+                    dbHandler.addFeedBack(feedBack);
+
+                    startActivity(new Intent(context, FeedBackMainActivity.class));
+                }
             }
+
         });
     }
 }
