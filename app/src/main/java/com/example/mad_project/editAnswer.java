@@ -3,9 +3,13 @@
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import javax.mail.search.IntegerComparisonTerm;
 
  public class editAnswer extends AppCompatActivity {
 
@@ -38,6 +42,20 @@ import android.widget.EditText;
         editText12.setText(question6.getModule());
         editText13.setText(question6.getQuestion());
         editText14.setText(question6.getAnswer());
+
+        button7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String email = editText11.getText().toString();
+                String module = editText12.getText().toString();
+                String questiion = editText13.getText().toString();
+                String answer = editText14.getText().toString();
+
+                Question2 question2 = new Question2(Integer.parseInt(id),email,module,questiion,answer);
+                int state = dbhandler.answerUpdate(question2);
+                startActivity(new Intent(editAnswer.this,ShowAnswerActivity.class));
+            }
+        });
 
 
     }
