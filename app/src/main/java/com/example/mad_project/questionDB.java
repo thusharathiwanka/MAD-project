@@ -96,8 +96,9 @@ public class questionDB extends SQLiteOpenHelper {
                 String Email = cursor.getString(1);
                 String Module = cursor.getString(2);
                 String Question = cursor.getString(3);
+                String Answer = cursor.getString(4);
 
-                Question ques1 = new Question(ID,Email,Module,Question);
+                Question ques1 = new Question(ID,Email,Module,Question,Answer);
                 ques2.add(ques1);
 
             }while(cursor.moveToNext());
@@ -168,6 +169,32 @@ public class questionDB extends SQLiteOpenHelper {
 
     }
 
+    //Display Answer
+    public List<Question2> getAllAnswers(){
+        List<Question2> returnList = new ArrayList<>();
+        String query = "SELECT * FROM "+TABLE_NAME;
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.moveToFirst()){
+            do{
+                int id = cursor.getInt(0);
+                String email = cursor.getString(1);
+                String module = cursor.getString(2);
+                String question = cursor.getString(3);
+                String answer = cursor.getString(4);
+
+                Question2 question1 = new Question2(id,email,module,question,answer);
+                returnList.add(question1);
+            }while(cursor.moveToNext());
+        }else{
+            //If it is faile do not display.
+        }
+        cursor.close();
+        db.close();
+        return returnList;
+    }
 
 
  }

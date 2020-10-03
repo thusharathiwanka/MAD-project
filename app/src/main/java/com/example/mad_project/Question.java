@@ -35,7 +35,28 @@ public class Question {
                 "\nid=" + id +
                 "\nemail='" + email + '\'' +
                 "\nmodule='" + module + '\'' +
-                "\nquestion='" + question + '\'' ;
+                "\nquestion='" + question + '\'';
+
+
+
+    }
+
+    /*@Override
+    public String toString1() {
+        return "Question{" +
+                "email='" + email + '\'' +
+                ", module='" + module + '\'' +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                '}';
+    }*/
+
+    public String display(){
+        return "" +
+                "\nemail='" + email + '\'' +
+                "\nmodule='" + module + '\'' +
+                "\nquestion='" + question + '\''+
+                "\nanswer='"+ answer +'\'';
     }
 
     public int getId() {

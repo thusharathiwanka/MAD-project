@@ -57,6 +57,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
 
         showQuestionOnListView(listView2);
 
+        //DialogBox
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int possition2, long l) {
