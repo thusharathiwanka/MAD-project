@@ -23,14 +23,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
         String createTableStatment = "CREATE TABLE " + ADD_LESSONS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LESSON_NAME + " TEXT, " + COLUMN_CONTENT + " TEXT)";
         db.execSQL(createTableStatment);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ADD_LESSONS);
     }
 
     public boolean addOne(AdminModel adminModel){

@@ -43,8 +43,6 @@ public class ForgetPasswordActivity extends AppCompatActivity {
 
                     if(isChanged) {
                         sendMail(emailInput, newPassword);
-                        Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
-                        startActivity(intent);
                     }
                 } else {
                     Toasty.error(getApplicationContext(), "Sorry your email does not match with any records", Toasty.LENGTH_SHORT).show();

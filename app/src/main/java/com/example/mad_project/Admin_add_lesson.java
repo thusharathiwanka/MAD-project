@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
+
 public class Admin_add_lesson extends AppCompatActivity {
 
     Button button11, button12;
@@ -42,7 +44,7 @@ public class Admin_add_lesson extends AppCompatActivity {
                 AdminModel adminModel;
                 try{
                     adminModel = new AdminModel(-1, et_lname.getText().toString(), et_lcontent.getText().toString());
-                    Toast.makeText(Admin_add_lesson.this, "Successfully Submitted!", Toast.LENGTH_SHORT).show();
+                    Toasty.success(getApplicationContext(), "Successfully Submitted", Toasty.LENGTH_SHORT).show();
                         Intent i = new Intent(Admin_add_lesson.this,Admin_Lesson_java.class);
                         startActivity(i);
 

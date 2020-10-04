@@ -38,9 +38,9 @@ public class AdminLoginActivity extends AppCompatActivity {
         });
 
         //Inserting admins
-//        DBHelperProfile adminDB = new DBHelperProfile(this);
-//        adminDB.insertAdmins("Thushara Thiwanka", "thushara@gmail.com", "thushara01", "thushara01", "Node JS, JavaScript");
-//        adminDB.insertAdmins("Udeepa Desarana", "udeepa@gmail.com", "udeepa01", "udeepa01", "React JS, JavaScript");
+        DBHelperProfile adminDB = new DBHelperProfile(this);
+        adminDB.insertAdmins("Thushara Thiwanka", "thushara@gmail.com", "thushara01", "thushara01", "Node JS, JavaScript");
+        adminDB.insertAdmins("Udeepa Desarana", "udeepa@gmail.com", "udeepa01", "udeepa01", "React JS, JavaScript");
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override

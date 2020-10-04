@@ -16,6 +16,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
+
 public class Admin_Lesson_java extends AppCompatActivity {
 
     ArrayAdapter adminArrayAdapter;
@@ -72,7 +74,7 @@ public class Admin_Lesson_java extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dataBaseHelper.deleteOne(adminModel);
                         ShowLessonsOnListView(lv_lessonDetails_j);
-                        Toast.makeText(Admin_Lesson_java.this, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
+                        Toasty.success(getApplicationContext(), "Deleted Successfully !", Toasty.LENGTH_SHORT).show();
                     }
                 });
                 builder.show();

@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import es.dmoral.toasty.Toasty;
+
 public class Admin_lesson_update extends AppCompatActivity {
 
     EditText et_lname, et_lcontent;
@@ -51,7 +53,7 @@ public class Admin_lesson_update extends AppCompatActivity {
 
                 AdminModel adminModel = new AdminModel(Integer.parseInt(id), l_name, l_content);
                 int state = dataBaseHelper.update(adminModel);
-                Toast.makeText(Admin_lesson_update.this, "Successfully Updated!", Toast.LENGTH_SHORT).show();
+                Toasty.success(getApplicationContext(), "Successfully Updated !", Toasty.LENGTH_SHORT).show();
                 startActivity(new Intent(Admin_lesson_update.this,Admin_Lesson_java.class));
 
             }
