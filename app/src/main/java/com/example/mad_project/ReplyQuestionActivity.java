@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ReplyQuestionActivity extends AppCompatActivity {
     private EditText editText7,editText8,editText9,editText10;
@@ -42,7 +43,20 @@ public class ReplyQuestionActivity extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String setEmail2 = editText7.getText().toString();
+                if(editText7.getText().toString().matches("") || editText8.getText().toString().matches("") || editText9.getText().toString().matches("") || editText10.getText().toString().matches("")){
+                    Toast.makeText(ReplyQuestionActivity.this,"Please Fill all the Fields.",Toast.LENGTH_LONG).show();
+                }else{
+                    String setEmail2 = editText7.getText().toString();
+                    String setModule2 = editText8.getText().toString();
+                    String setQuestion2 = editText9.getText().toString();
+                    String setAnswer = editText10.getText().toString();
+
+                    //create model class object
+                    Question question = new Question(Integer.parseInt(id),setEmail2,setModule2,setQuestion2,setAnswer);
+                    int state = dbhandler.setAnswer(question);
+                    startActivity(new Intent(context,ShowAnswerActivity.class));
+                }
+                /*String setEmail2 = editText7.getText().toString();
                 String setModule2 = editText8.getText().toString();
                 String setQuestion2 = editText9.getText().toString();
                 String setAnswer = editText10.getText().toString();
@@ -50,7 +64,7 @@ public class ReplyQuestionActivity extends AppCompatActivity {
                 //create model class object
                 Question question = new Question(Integer.parseInt(id),setEmail2,setModule2,setQuestion2,setAnswer);
                 int state = dbhandler.setAnswer(question);
-                startActivity(new Intent(context,ShowAnswerActivity.class));
+                startActivity(new Intent(context,ShowAnswerActivity.class));*/
             }
         });
 

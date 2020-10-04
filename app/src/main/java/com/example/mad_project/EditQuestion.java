@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditQuestion extends AppCompatActivity {
 
@@ -42,13 +43,18 @@ public class EditQuestion extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String setEmail = editText4.getText().toString();
-                String setModule = editText5.getText().toString();
-                String setQuestion = editText6.getText().toString();
+                if(editText4.getText().toString().matches("") || editText5.getText().toString().matches("") || editText6.getText().toString().matches("")){
+                    Toast.makeText(EditQuestion.this,"Please Fill all the Fields.",Toast.LENGTH_LONG).show();
+                }else{
+                    String setEmail = editText4.getText().toString();
+                    String setModule = editText5.getText().toString();
+                    String setQuestion = editText6.getText().toString();
 
-                Question question = new Question(Integer.parseInt(id2),setEmail,setModule,setQuestion);
-                int state = dbhandler.updateQuestion(question);
-                startActivity(new Intent(context,DisplayQuestionActivity.class));
+                    Question question = new Question(Integer.parseInt(id2),setEmail,setModule,setQuestion);
+                    int state = dbhandler.updateQuestion(question);
+                    startActivity(new Intent(context,DisplayQuestionActivity.class));
+                }
+
 
 
 

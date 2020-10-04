@@ -36,13 +36,20 @@ public class AddQuestion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = editText1.getText().toString();
-                String module = editText2.getText().toString();
-                String question = editText3.getText().toString();
+                if(editText1.getText().toString().matches("") || editText2.getText().toString().matches("") || editText3.getText().toString().matches("")){
+                    Toast.makeText(AddQuestion.this,"Please Fill all the Fields.",Toast.LENGTH_LONG).show();
+                }else{
+                    String email = editText1.getText().toString();
+                    String module = editText2.getText().toString();
+                    String question = editText3.getText().toString();
 
-                Question q1 = new Question(email,module,question);
-                qdb.add(q1);
-                Toast.makeText(AddQuestion.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                    Question q1 = new Question(email,module,question);
+                    qdb.add(q1);
+                    Toast.makeText(AddQuestion.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(),DisplayQuestionActivity.class));
+                }
+
+
 
                /* boolean isInserted = qdb.insertData(editText1.getText().toString(),
                         editText2.getText().toString(),
@@ -53,7 +60,7 @@ public class AddQuestion extends AppCompatActivity {
                 }else{
                     Toast.makeText(AddQuestion.this,"Data Not Inserted",Toast.LENGTH_LONG).show();
                 }*/
-                startActivity(new Intent(getApplicationContext(),DisplayQuestionActivity.class));
+
 
                 /*get data from edit text
                 String email = editText1.getText().toString();

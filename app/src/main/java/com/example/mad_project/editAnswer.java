@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import javax.mail.search.IntegerComparisonTerm;
 
@@ -46,14 +47,19 @@ import javax.mail.search.IntegerComparisonTerm;
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = editText11.getText().toString();
-                String module = editText12.getText().toString();
-                String questiion = editText13.getText().toString();
-                String answer = editText14.getText().toString();
+                if( editText11.getText().toString().matches("") || editText12.getText().toString().matches("") || editText13.getText().toString().matches("") || editText14.getText().toString().matches("")){
+                    Toast.makeText(editAnswer.this,"Please Fill all the Fields.",Toast.LENGTH_LONG).show();
+                }else{
+                    String email = editText11.getText().toString();
+                    String module = editText12.getText().toString();
+                    String questiion = editText13.getText().toString();
+                    String answer = editText14.getText().toString();
 
-                Question2 question2 = new Question2(Integer.parseInt(id),email,module,questiion,answer);
-                int state = dbhandler.answerUpdate(question2);
-                startActivity(new Intent(editAnswer.this,ShowAnswerActivity.class));
+                    Question2 question2 = new Question2(Integer.parseInt(id),email,module,questiion,answer);
+                    int state = dbhandler.answerUpdate(question2);
+                    startActivity(new Intent(editAnswer.this,ShowAnswerActivity.class));
+                }
+
             }
         });
 
