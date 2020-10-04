@@ -43,7 +43,7 @@
         android:layout_marginTop="84dp"
         android:layout_marginBottom="32dp"
         android:fontFamily="@font/heading"
-        android:text="Enter Answer"
+        android:text="Edit Answer"
         android:textColor="@color/black"
         android:textSize="45sp"
         app:layout_constraintBottom_toTopOf="@+id/emailInput"
