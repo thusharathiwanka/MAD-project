@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class userShowAnswers extends AppCompatActivity {
     private List<Question2> list6;
     private TextView textView6;
     private Button button7;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class userShowAnswers extends AppCompatActivity {
         textView6 = findViewById(R.id.countQuestion5);
         button7 = findViewById(R.id.addQuestion5);
         button7.setText("+");
+        backBtn = findViewById(R.id.back);
 
         int count = dbhandler.countQuestion();
 
@@ -49,6 +52,12 @@ public class userShowAnswers extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         showAnswersOnListView(listview4);
 

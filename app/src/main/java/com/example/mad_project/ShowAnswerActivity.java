@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +24,7 @@ public class ShowAnswerActivity extends AppCompatActivity {
     private questionDB dbhandler;
     private List<Question2> list3;
     private TextView textView;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class ShowAnswerActivity extends AppCompatActivity {
         dbhandler = new questionDB(this);
         listview3 = findViewById(R.id.answerDisplay);
         textView = findViewById(R.id.countAnswer);
+        backBtn = findViewById(R.id.back);
 
         int count = dbhandler.countQuestion();
 
@@ -78,6 +81,13 @@ public class ShowAnswerActivity extends AppCompatActivity {
                 });
                 builder.show();
 
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

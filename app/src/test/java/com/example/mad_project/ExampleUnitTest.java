@@ -35,4 +35,13 @@ public class ExampleUnitTest {
         boolean result1 = StudentRegisterActivity.usernameValidate("test");
         assertFalse(result1);
     }
+    
+    /*IT18125580 - Test Cases for validation email in Add Question*/
+    @Test
+    public void emailValidationQuestion() {
+        boolean check = AddQuestion.emailValidation("test@gmail.com");
+        assertTrue(check);
+        boolean check2 = AddQuestion.emailValidation("check");
+        assertFalse(check2);
+    }
 }

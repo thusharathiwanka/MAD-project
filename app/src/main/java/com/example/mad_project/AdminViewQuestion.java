@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +21,8 @@ import java.util.List;
 public class AdminViewQuestion extends AppCompatActivity {
 
     ArrayAdapter questionArrayAdapter;
-    private Button button;
+    //private Button button;
+    ImageView backBtn;
     private TextView textView1;
     private ListView listView1;
     private questionDB dbhandler;
@@ -35,7 +37,8 @@ public class AdminViewQuestion extends AppCompatActivity {
 
         textView1 = findViewById(R.id.countQuestion);
         listView1 = findViewById(R.id.questionID);
-        button = findViewById(R.id.replyBtn);
+        backBtn = findViewById(R.id.back);
+        //button = findViewById(R.id.replyBtn);
 
         //count
         int count = dbhandler.countQuestion();
@@ -45,14 +48,19 @@ public class AdminViewQuestion extends AppCompatActivity {
         textView1.setText("You have "+count+" questions.");
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+       /*button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openActivity2();
             }
+        });*/
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
         });
-
-
 
         showQuestionOnListView(listView1);
 

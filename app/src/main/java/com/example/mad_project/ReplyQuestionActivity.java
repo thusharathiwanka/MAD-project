@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ReplyQuestionActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class ReplyQuestionActivity extends AppCompatActivity {
     private Button button6;
     private Context context;
     private questionDB dbhandler;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,7 @@ public class ReplyQuestionActivity extends AppCompatActivity {
         editText8 = findViewById(R.id.answerModule);
         editText9 = findViewById(R.id.answerQuestion);
         editText10 = findViewById(R.id.answer);
+        backBtn = findViewById(R.id.back);
 
         //Button
         button6 = findViewById(R.id.uploadBtn);
@@ -65,6 +68,13 @@ public class ReplyQuestionActivity extends AppCompatActivity {
                 Question question = new Question(Integer.parseInt(id),setEmail2,setModule2,setQuestion2,setAnswer);
                 int state = dbhandler.setAnswer(question);
                 startActivity(new Intent(context,ShowAnswerActivity.class));*/
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 

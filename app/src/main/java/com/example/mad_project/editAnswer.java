@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import javax.mail.search.IntegerComparisonTerm;
@@ -18,6 +19,7 @@ import javax.mail.search.IntegerComparisonTerm;
     private Button button7;
     private questionDB dbhandler;
     private Context context;
+    ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ import javax.mail.search.IntegerComparisonTerm;
         editText12 = findViewById(R.id.answerUpModule);
         editText13 = findViewById(R.id.answerUpQuestion);
         editText14 = findViewById(R.id.answerUpdate);
+        backBtn = findViewById(R.id.back);
 
         //Button
         button7 = findViewById(R.id.answerUpBtn);
@@ -62,7 +65,12 @@ import javax.mail.search.IntegerComparisonTerm;
 
             }
         });
-
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 }

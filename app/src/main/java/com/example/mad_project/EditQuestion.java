@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class EditQuestion extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class EditQuestion extends AppCompatActivity {
     Button button5;
     private questionDB dbhandler;
     private Context context;
+    ImageView backBtn;
 
 
     @Override
@@ -30,6 +32,7 @@ public class EditQuestion extends AppCompatActivity {
         editText5 = findViewById(R.id.module2);
         editText6 = findViewById(R.id.question2);
         button5 = findViewById(R.id.updateBtn);
+        backBtn = findViewById(R.id.back);
 
 
         final String id2 = getIntent().getStringExtra("ID");
@@ -58,6 +61,13 @@ public class EditQuestion extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
