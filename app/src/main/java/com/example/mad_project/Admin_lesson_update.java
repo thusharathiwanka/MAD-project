@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import es.dmoral.toasty.Toasty;
 
 public class Admin_lesson_update extends AppCompatActivity {
@@ -48,21 +51,33 @@ public class Admin_lesson_update extends AppCompatActivity {
         Update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String l_name = et_lname.getText().toString();
-                String l_content = et_lcontent.getText().toString();
+                if(et_lname.getText().toString().matches("") || et_lcontent.getText().toString().matches("")){
+                    Toasty.error(getApplicationContext(), "Please fill the fields !", Toasty.LENGTH_SHORT).show();                }
+                else {
+                    String l_name = et_lname.getText().toString();
+                    String l_content = et_lcontent.getText().toString();
 
-                AdminModel adminModel = new AdminModel(Integer.parseInt(id), l_name, l_content);
-                int state = dataBaseHelper.update(adminModel);
-                Toasty.success(getApplicationContext(), "Successfully Updated !", Toasty.LENGTH_SHORT).show();
-                startActivity(new Intent(Admin_lesson_update.this,Admin_Lesson_java.class));
-
+                    AdminModel adminModel = new AdminModel(Integer.parseInt(id), l_name, l_content);
+                    dataBaseHelper.update(adminModel);
+                    Toasty.success(getApplicationContext(), "Successfully Updated !", Toasty.LENGTH_SHORT).show();
+                    startActivity(new Intent(Admin_lesson_update.this, Admin_Lesson_java.class));
+                }
             }
         });
 
+    }
+
+    public static boolean LessonNameValidate(String et_lname) {
+        String lnameRegex = "^[aA-zZ]\\w{5,29}$";
+        Pattern lnamePattern = Pattern.compile(lnameRegex);
+        Matcher lnameMatcher = lnamePattern.matcher(et_lname);
+
+        return lnameMatcher.matches();
     }
 
     public void back(View v) {
         Intent i = new Intent(this, Admin_Lesson_java.class);
         startActivity(i);
     }
+
 }

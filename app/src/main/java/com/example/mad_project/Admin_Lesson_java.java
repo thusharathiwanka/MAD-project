@@ -74,7 +74,7 @@ public class Admin_Lesson_java extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         dataBaseHelper.deleteOne(adminModel);
                         ShowLessonsOnListView(lv_lessonDetails_j);
-                        Toasty.success(getApplicationContext(), "Deleted Successfully !", Toasty.LENGTH_SHORT).show();
+
                     }
                 });
                 builder.show();

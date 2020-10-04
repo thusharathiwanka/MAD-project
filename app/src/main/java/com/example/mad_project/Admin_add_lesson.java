@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +15,6 @@ import es.dmoral.toasty.Toasty;
 
 public class Admin_add_lesson extends AppCompatActivity {
 
-    Button button11, button12;
     EditText et_lname, et_lcontent;
 
     @Override
@@ -25,7 +25,7 @@ public class Admin_add_lesson extends AppCompatActivity {
         TextView addLessons = findViewById(R.id.addLesson);
         addLessons.setText("Add Lessons");
 
-        TextView titleName = findViewById(R.id.titleName);
+        final TextView titleName = findViewById(R.id.titleName);
         titleName.setText("Lesson Name: ");
 
         et_lname = findViewById(R.id.lname);
@@ -34,7 +34,7 @@ public class Admin_add_lesson extends AppCompatActivity {
         Button button11 = findViewById(R.id.button11);
         button11.setText("Submit");
 
-        TextView content = findViewById(R.id.content);
+        final TextView content = findViewById(R.id.content);
         content.setText("Content: ");
 
         button11.setOnClickListener(new View.OnClickListener() {
@@ -42,22 +42,24 @@ public class Admin_add_lesson extends AppCompatActivity {
             public void onClick(View view) {
 
                 AdminModel adminModel;
-                try{
-                    adminModel = new AdminModel(-1, et_lname.getText().toString(), et_lcontent.getText().toString());
-                    Toasty.success(getApplicationContext(), "Successfully Submitted", Toasty.LENGTH_SHORT).show();
-                        Intent i = new Intent(Admin_add_lesson.this,Admin_Lesson_java.class);
+
+                    try {
+                        adminModel = new AdminModel(-1, et_lname.getText().toString(), et_lcontent.getText().toString());
+                        Toasty.success(getApplicationContext(), "Successfully Submitted", Toasty.LENGTH_SHORT).show();
+                        Intent i = new Intent(Admin_add_lesson.this, Admin_Lesson_java.class);
                         startActivity(i);
 
-                }catch(Exception e){
-                    Toast.makeText(Admin_add_lesson.this, "Error Occured!", Toast.LENGTH_SHORT).show();
-                    adminModel = new AdminModel(-1,"error","error");
+                    } catch (Exception e) {
+                        Toast.makeText(Admin_add_lesson.this, "Error Occured!", Toast.LENGTH_SHORT).show();
+                        adminModel = new AdminModel(-1, "error", "error");
+                    }
+
+                    DataBaseHelper dataBaseHelper = new DataBaseHelper(Admin_add_lesson.this);
+
+                    boolean success = dataBaseHelper.addOne(adminModel);
+                    //Toast.makeText(Admin_add_lesson.this, "Success: "+success,Toast.LENGTH_SHORT).show();
+
                 }
-
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(Admin_add_lesson.this);
-
-                boolean success = dataBaseHelper.addOne(adminModel);
-                //Toast.makeText(Admin_add_lesson.this, "Success: "+success,Toast.LENGTH_SHORT).show();
-            }
         });
 
     }
