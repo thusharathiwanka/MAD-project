@@ -35,13 +35,16 @@ public class ExampleUnitTest {
         boolean result1 = StudentRegisterActivity.usernameValidate("test");
         assertFalse(result1);
     }
-    //IT19002484 - Test case for check whether update lesson name and content iis filled
 
+    //IT19002484 - Test case for check whether update lesson name is valid
+    /*lesson name can not contain any numbers
+    it can only contain letters fron a-z and A-Z
+     */
     @Test
     public void LessonNameValidate() {
-        boolean result = Admin_lesson_update.LessonNameValidate("JAVA101");
+        boolean result = Admin_lesson_update.LessonNameValidate("Java");
         assertTrue(result);
-        boolean result1 = Admin_lesson_update.LessonNameValidate("JAVA");
+        boolean result1 = Admin_lesson_update.LessonNameValidate("JAVA101");
         assertFalse(result1);
     }
 }

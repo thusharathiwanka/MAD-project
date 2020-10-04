@@ -52,15 +52,24 @@ public class Admin_lesson_update extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(et_lname.getText().toString().matches("") || et_lcontent.getText().toString().matches("")){
-                    Toasty.error(getApplicationContext(), "Please fill the fields !", Toasty.LENGTH_SHORT).show();                }
+                    Toasty.error(getApplicationContext(), "Please fill the fields !", Toasty.LENGTH_SHORT).show();
+                }
                 else {
                     String l_name = et_lname.getText().toString();
                     String l_content = et_lcontent.getText().toString();
 
-                    AdminModel adminModel = new AdminModel(Integer.parseInt(id), l_name, l_content);
-                    dataBaseHelper.update(adminModel);
-                    Toasty.success(getApplicationContext(), "Successfully Updated !", Toasty.LENGTH_SHORT).show();
-                    startActivity(new Intent(Admin_lesson_update.this, Admin_Lesson_java.class));
+                    boolean validLesName = LessonNameValidate(l_name);
+
+                    if(validLesName){
+                        AdminModel adminModel = new AdminModel(Integer.parseInt(id), l_name, l_content);
+                        dataBaseHelper.update(adminModel);
+                        Toasty.success(getApplicationContext(), "Successfully Updated !", Toasty.LENGTH_SHORT).show();
+                        startActivity(new Intent(Admin_lesson_update.this, Admin_Lesson_java.class));
+                    }
+                    else{
+                        Toasty.error(getApplicationContext(), "Can not insert numbers !", Toasty.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
@@ -68,7 +77,7 @@ public class Admin_lesson_update extends AppCompatActivity {
     }
 
     public static boolean LessonNameValidate(String et_lname) {
-        String lnameRegex = "^[aA-zZ]\\w{5,29}$";
+        String lnameRegex = "^[aA-zZ]*$";
         Pattern lnamePattern = Pattern.compile(lnameRegex);
         Matcher lnameMatcher = lnamePattern.matcher(et_lname);
 
