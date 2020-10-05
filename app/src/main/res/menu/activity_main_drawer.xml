@@ -12,7 +12,7 @@
             android:title="@string/learning" />
         <item
             android:id="@+id/nav_ask_question"
-            android:title="@string/ask_question" />
+            android:title="Display Question" />
         <item
             android:id="@+id/nav_my_todos"
             android:title="@string/my_todos" />

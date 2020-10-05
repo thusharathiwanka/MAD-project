@@ -66,7 +66,7 @@ public class   StudentProfileActivity extends AppCompatActivity {
                 if(id == R.id.nav_learning) {
                     startActivity(new Intent(getApplicationContext(), Student_View_lessons.class));
                 } else if (id == R.id.nav_ask_question) {
-                    startActivity(new Intent(getApplicationContext(), AddQuestion.class));
+                    startActivity(new Intent(getApplicationContext(), DisplayQuestionActivity.class));
                 } else if (id == R.id.nav_about) {
                     startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 } else if (id == R.id.nav_feedback) {
