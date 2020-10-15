@@ -31,7 +31,7 @@ public class ExampleUnitTest {
     public void isValidUsername() {
         boolean result = StudentRegisterActivity.usernameValidate("test01");
         assertTrue(result);
-        boolean result1 = StudentRegisterActivity.usernameValidate("test");
+        boolean result1 = StudentRegisterActivity.usernameValidate("test%%");
         assertFalse(result1);
     }
 

@@ -88,7 +88,7 @@ public class StudentRegisterActivity extends AppCompatActivity {
     }
 
     public static boolean usernameValidate(String username) {
-        String usernameRegex = "^[aA-zZ]\\w{5,29}$";
+        String usernameRegex = "^[aA-zZ0-9_-]\\w{5,30}$";
         Pattern usernamePattern = Pattern.compile(usernameRegex);
         Matcher usernameMatcher = usernamePattern.matcher(username);
 
