@@ -24,6 +24,7 @@ public class AdminViewQuestion extends AppCompatActivity {
     //private Button button;
     ImageView backBtn;
     private TextView textView1;
+    private Button replyBtn;
     private ListView listView1;
     private questionDB dbhandler;
     private List<Question> list3;
@@ -38,6 +39,7 @@ public class AdminViewQuestion extends AppCompatActivity {
         textView1 = findViewById(R.id.countQuestion);
         listView1 = findViewById(R.id.questionID);
         backBtn = findViewById(R.id.back);
+        replyBtn = findViewById(R.id.replyBtn);
         //button = findViewById(R.id.replyBtn);
 
         //count
@@ -59,6 +61,14 @@ public class AdminViewQuestion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        replyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ShowAnswerActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -22,7 +22,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
     private Button button,button2;
 
     ArrayAdapter questionArrayAdapter;
-    private Button button4;
+    private Button button4,replyBtn;
     private TextView textView2;
     private ListView listView2;
     private questionDB dbhandler;
@@ -36,6 +36,7 @@ public class DisplayQuestionActivity extends AppCompatActivity {
         dbhandler = new questionDB(this);
         button4 = findViewById(R.id.addQuestion2);
         button4.setText("+");
+        replyBtn = findViewById(R.id.replyBtn);
         textView2 = findViewById(R.id.countQuestion2);
         listView2 = findViewById(R.id.questionID2);
 
@@ -46,6 +47,14 @@ public class DisplayQuestionActivity extends AppCompatActivity {
 
 
         textView2.setText("You have "+count+" questions.");
+
+        replyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),userShowAnswers.class);
+                startActivity(intent);
+            }
+        });
 
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
